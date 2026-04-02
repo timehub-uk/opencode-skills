@@ -39,6 +39,20 @@ Or manually creating the SKILL.md file in the appropriate location.
 14. [Marketing & SEO](#marketing--seo)
 15. [Product & Project Management](#product--project-management)
 16. [Database & Data](#database--data)
+17. [Git Workflow](#git-workflow)
+18. [Cloud & DevOps](#cloud--devops)
+19. [Testing & TDD](#testing--tdd)
+20. [Academic & Research](#academic--research)
+21. [Media & Creative](#media--creative)
+22. [Finance & Trading](#finance--trading)
+23. [Automation & Scripts](#automation--scripts)
+24. [Plugins & Extensions](#plugins--extensions)
+25. [Mobile Development](#mobile-development)
+26. [Database & ORM](#database--orm)
+27. [UI/UX Design](#uiux-design)
+28. [API Development](#api-development)
+29. [Blockchain & Web3](#blockchain--web3)
+30. [Documentation](#documentation)
 
 ---
 
@@ -251,6 +265,196 @@ Or manually creating the SKILL.md file in the appropriate location.
 |------|------|-------------|-----|-------|
 | mcp-excel | Python | MCP server for AI agents to analyze Excel spreadsheets | https://github.com/jwadow/mcp-excel | 24 |
 | pdf-mcp | Python | MCP server for PDF processing with intelligent caching | https://github.com/jztan/pdf-mcp | 11 |
+
+---
+
+## Git Workflow
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| dev-agent-skills | - | Claude Code skills plugin for Git, GitHub, and skill authoring workflows | https://github.com/fvadicamo/dev-agent-skills | 55 |
+| claude-git-pr-skill | - | Professional GitHub PR review skill for Claude Code with pending reviews | https://github.com/aidankinzett/claude-git-pr-skill | 15 |
+| skills | TypeScript | Claude Code skills for git workflows, GitHub automation, security audits | https://github.com/tartinerlabs/skills | 5 |
+| git-workflow-skill | Shell | Agent Skill for Git workflow best practices - branching, commits, PR workflows | https://github.com/netresearch/git-workflow-skill | 8 |
+| claude-git-expert | - | Advanced Git workflow automation skill for Claude Code | https://github.com/IncomeStreamSurfer/claude-git-expert | 4 |
+| github-cli-claude-skill | Shell | Claude Code skill that provides GitHub CLI (gh) integration | https://github.com/doug-skinner/github-cli-claude-skill | 9 |
+| claude-code-toolkit | - | Claude Code skills for structured software delivery — planning, git, release workflows | https://github.com/leifericf/claude-code-toolkit | 3 |
+| gitflow-skills | Shell | Git Flow workflow for Claude Code & OpenClaw | https://github.com/hughedward/gitflow-skills | 4 |
+| claude-skills-engineering | Shell | Engineering-focused Claude Code skills for git workflows and development tools | https://github.com/djacobsmeyer/claude-skills-engineering | 2 |
+| claude-ship-command | Shell | Powerful /ship skill that automates git commit, push, build, and deploy | https://github.com/sterlingsky/claude-ship-command | 2 |
+| claude-git-skills | Shell | System-level Git workflow Skills for Claude Code | https://github.com/CarpeWu/claude-git-skills | 0 |
+
+---
+
+## Cloud & DevOps
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| claude-ai-spring-boot | - | Claude Code template for Spring Boot | https://github.com/piomin/claude-ai-spring-boot | 965 |
+| learn-docker-and-k8s | Shell | Interactive AI-driven game to learn Docker, Linux, networking & Kubernetes | https://github.com/ericboy0224/learn-docker-and-k8s | 366 |
+| seakills | Python | AI agent skills for Sealos Cloud — deploy any project with one command | https://github.com/labring/seakills | 12 |
+| skills | Shell | Hand-crafted Claude Code skills for DevOps, infrastructure, security | https://github.com/iuliandita/skills | 3 |
+| infraclaude | TypeScript | MCP Server for Infrastructure Management — Kubernetes, Docker, Terraform | https://github.com/batu-sonmez/infraclaude | 0 |
+| devopsline | Python | DevOps-focused status line for Claude Code — K8s context, AWS profile | https://github.com/snirkap/devopsline | 2 |
+| opsmate | Go | One command to give Claude Code full understanding of your infrastructure | https://github.com/Paffin/opsmate | 0 |
+| secure-cloud-prompt-engineering | Shell | Security-focused prompt library for automated IaC security reviews | https://github.com/uttej-badwane/secure-cloud-prompt-engineering | 1 |
+| clauderon | Rust | Session manager for running isolated Claude Code sessions in Docker/Kubernetes | https://github.com/garettmd/clauderon | 0 |
+| Ultimate-Agentic-DevOps-with-Claude-Code | HTML | Build, deploy, and operate AWS infrastructure using AI agents | https://github.com/pravinmishraaws/Ultimate-Agentic-DevOps-with-Claude-Code | 13 |
+
+---
+
+## Testing & TDD
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| atdd | Shell | Acceptance Test Driven Development for Claude Code | https://github.com/swingerman/atdd | 87 |
+| muki-ai-plugins | Python | Disciplined development workflow for Claude Code — TDD, code review | https://github.com/mukiwu/muki-ai-plugins | 19 |
+| claude-conductor | JavaScript | Context-Driven Development framework for Claude Code | https://github.com/lackeyjb/claude-conductor | 12 |
+| ralph-with-claude-code-and-linear | Shell | Autonomous AI agent loop with Linear MCP, Playwright testing, TDD workflow | https://github.com/ismailytics/ralph-with-claude-code-and-linear | 9 |
+| tdder | - | Claude Code plugin that guides AI agents through TDD and Clean Code | https://github.com/t1/tdder | 8 |
+| upstack | Shell | Lightweight Red/Green TDD skill suite for Claude Code, Cursor, Codex | https://github.com/Upsolve-Labs/upstack | 13 |
+| claude-code-tdd | TypeScript | Fully automated TDD pipeline for Claude Code | https://github.com/elasticLove1/claude-code-tdd | 2 |
+| chiastic-coding-plugin | JavaScript | Claude Code plugin that orchestrates AI agents into Agile team patterns | https://github.com/guyroyse/chiastic-coding-plugin | 7 |
+| xavier | Python | Enterprise-grade SCRUM development framework with strict TDD | https://github.com/gumruyanzh/xavier | 4 |
+| tdd-dev | Shell | Claude Code plugin that enforces Test-Driven Development | https://github.com/hculap/tdd-dev | 2 |
+| specwright | Python | Spec-driven development plugin for Claude Code and Opencode | https://github.com/Obsidian-Owl/specwright | 6 |
+| Specular | Shell | AI-native Spec-Driven Development (SDD) framework for Claude Code | https://github.com/pei9564/Specular | 3 |
+| greenlight | Go | TDD-first development system for Claude Code | https://github.com/atlantic-blue/greenlight | 4 |
+| claude-code-testing-pyramid | TypeScript | Testing strategies and patterns for Claude Code | https://github.com/HermeticOrmus/claude-code-testing-pyramid | 0 |
+
+---
+
+## Academic & Research
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| academic-research-skills | TeX | Academic Research Skills: research → write → review → revise → finalize | https://github.com/Imbad0202/academic-research-skills | 1,796 |
+| AI-Research-SKILLs | TeX | Comprehensive library of AI research and engineering skills | https://github.com/Orchestra-Research/AI-Research-SKILLs | 5,995 |
+| claudeblattman | HTML | Claude Code for academics — skills, agents, and setup guides | https://github.com/chrisblattman/claudeblattman | 248 |
+| bioSkills | Python | SKILLS.md for doing bioinformatics with agents | https://github.com/GPTomics/bioSkills | 434 |
+
+---
+
+## Media & Creative
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| videocut-skills | JavaScript | Video editing Agent using Claude Code Skills | https://github.com/Ceeon/videocut-skills | 1,260 |
+| Generative-Media-Skills | Shell | Multi-modal Generative Media Skills for AI Agents | https://github.com/SamurAIGPT/Generative-Media-Skills | 2,982 |
+| excalidraw-diagram-skill | Python | Skill to generate beautiful Excalidraw diagrams | https://github.com/coleam00/excalidraw-diagram-skill | 1,721 |
+
+---
+
+## Finance & Trading
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| claude-trading-skills | Python | Claude Code skills for equity investors and traders | https://github.com/tradermonty/claude-trading-skills | 586 |
+| travel-hacking-toolkit | JavaScript | AI-powered travel hacking with points, miles, and award flights | https://github.com/borski/travel-hacking-toolkit | 62 |
+
+---
+
+## Automation & Scripts
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| claude-code-infrastructure-showcase | Shell | Examples of Claude Code infrastructure with skill auto-activation | https://github.com/diet103/claude-code-infrastructure-showcase | 9,398 |
+| claude-workflow-v2 | Python | Universal Claude Code workflow plugin with agents, skills, hooks, commands | https://github.com/CloudAI-X/claude-workflow-v2 | 1,310 |
+| agent-toolkit | Python | Curated collection of skills for AI coding agents | https://github.com/softaworks/agent-toolkit | 1,331 |
+| AI-Agents-Orchestrator | Python | Intelligent orchestration system for multiple AI coding assistants | https://github.com/hoangsonww/AI-Agents-Orchestrator | 24 |
+| claude-forge | Shell | Supercharge Claude Code with 11 AI agents, 36 commands & 15 skills | https://github.com/sangrokjung/claude-forge | 626 |
+| agentsys | JavaScript | AI writes code. This automates everything else — 19 plugins, 47 agents, 40 skills | https://github.com/agent-sh/agentsys | 687 |
+| codexia | TypeScript | Agent Workstation for Codex CLI + Claude Code | https://github.com/milisp/codexia | 531 |
+
+---
+
+## Plugins & Extensions
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| claude-plugins | TypeScript | Lightweight registry to discover, install, and manage Claude plugins | https://github.com/Kamalnrf/claude-plugins | 489 |
+| skill-builder | - | Claude Code Agent Skills Builder | https://github.com/metaskills/skill-builder | 93 |
+| agent-skill-creator | Python | Turn any workflow into reusable AI agent skills | https://github.com/FrancyJGLisboa/agent-skill-creator | 639 |
+| n-skills | TypeScript | Curated plugin marketplace for AI agents | https://github.com/numman-ali/n-skills | 948 |
+| skillkit | TypeScript | Supercharge AI coding agents with portable skills | https://github.com/rohitg00/skillkit | 708 |
+| upskill | Python | Generate and evaluate agent skills for code agents | https://github.com/huggingface/upskill | 456 |
+| buildwithclaude | Python | Single hub to find Claude Skills, Agents, Commands, Hooks, Plugins | https://github.com/davepoon/buildwithclaude | 2,677 |
+| awesome-llm-skills | Python | Curated list of awesome LLM and AI Agent Skills | https://github.com/Prat011/awesome-llm-skills | 1,054 |
+| refly | TypeScript | First open-source agent skills builder | https://github.com/refly-ai/refly | 7,165 |
+
+---
+
+## Mobile Development
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| mobile-app-design | Shell | Comprehensive mobile app UI/UX design skill - iOS, Android, React Native | https://github.com/awesome-skills/mobile-app-design | 13 |
+| ms-claude-mobile-skills | - | Custom Claude Code skills for React Native / Expo | https://github.com/nperez-ms/ms-claude-mobile-skills | 0 |
+| skills | - | Claude Code skill for building production-ready Expo React Native apps | https://github.com/emrahyurttutan/skills | 1 |
+| react-native-dev | - | Claude Code skill for React Native and Expo mobile development | https://github.com/mhuxain/react-native-dev | 1 |
+| vibe-app | TypeScript | Production-ready React Native + Expo starter with AI-powered dev | https://github.com/tjmehta/vibe-app | 2 |
+| mycro-skills | - | Claude Code skills for AI-assisted React Native/Expo development | https://github.com/jtrentc11/mycro-skills | 0 |
+| react-native-audit-claude-skill | - | Comprehensive React Native/Expo application audit skill | https://github.com/tannermares/react-native-audit-claude-skill | 0 |
+| arc-skill | Python | AI agent skill for scaffolding production-ready React Native projects | https://github.com/art9mid/arc-skill | 7 |
+| mobile-design-skill | - | Production-grade mobile UI design skill for Claude Code | https://github.com/codewithsunderdev/mobile-design-skill | 0 |
+| skill-mobile-mt | JavaScript | Master Senior Mobile Engineer skill for AI agents | https://github.com/buivietphi/skill-mobile-mt | 0 |
+
+---
+
+## Database & ORM
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| postgres-setup-skill | - | PostgreSQL setup skill with schema.sql, connection pooling | https://github.com/pixelsock/postgres-setup-skill | 0 |
+
+---
+
+## UI/UX Design
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| ui-marketplace | - | Complete UI/UX/CSS Marketplace for Claude Code - 29 specialized agents | https://github.com/EhssanAtassi/ui-marketplace | 3 |
+| ux-design-skill | HTML | Two skills for building kind, smart web interfaces | https://github.com/abr011/ux-design-skill | 0 |
+| kv-skills | HTML | Opinionated design skills for Claude Code | https://github.com/karthikv792/kv-skills | 0 |
+| design-skin | - | Extract design style DNA from UI/UX images, generate theme packages | https://github.com/dwf89044485/design-skin | 0 |
+
+---
+
+## API Development
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| swagger-gen-skill | - | Auto-generate Swagger/OpenAPI 3.0 docs from source code | https://github.com/showkkd133/swagger-gen-skill | 0 |
+| frontend-openapi-skills | JavaScript | Generate type-safe TypeScript models and API clients from OpenAPI | https://github.com/HaibaraAiAPTX/frontend-openapi-skills | 0 |
+
+---
+
+## Blockchain & Web3
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| spoon-awesome-skill | Python | 57 Python scripts across 19 skills for SpoonOS and Web3 integrations | https://github.com/XSpoonAi/spoon-awesome-skill | 14 |
+| blockchain-skills | - | Blockchain skills for Claude Code, OpenCode, Codex, Cursor | https://github.com/quiknode-labs/blockchain-skills | 11 |
+| arkham-intelligence-claude-skill | - | Integrate Arkham Intelligence API for on-chain analytics | https://github.com/Vyntral/arkham-intelligence-claude-skill | 5 |
+| WDK-SKILL | Shell | Universal Agent Skill for Tether's Wallet Development Kit | https://github.com/juancguerrerodev/WDK-SKILL | 0 |
+
+---
+
+## Documentation
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| pg-aiguide | Python | MCP server and Claude plugin for Postgres skills and documentation | https://github.com/timescale/pg-aiguide | 1,668 |
+| document-specialist-skill | - | AI-powered software documentation automation | https://github.com/SpillwaveSolutions/document-specialist-skill | 16 |
+| doxy | TypeScript | Transform any documentation site into Claude Code skills | https://github.com/davidosemwegie/doxy | 6 |
+| claude-skills | - | Automate the tedious parts of development. /update-docs to keep docs fresh | https://github.com/rohailaltaf/claude-skills | 7 |
+| claude-docs-generator | - | Automatic documentation generation skill | https://github.com/IncomeStreamSurfer/claude-docs-generator | 3 |
+| typo3-docs-skill | Shell | Agent Skill for TYPO3 extension documentation | https://github.com/netresearch/typo3-docs-skill | 6 |
+| claude-code-docs-plugin | Shell | Documentation plugin - auto-synced reference | https://github.com/marcusabu/claude-code-docs-plugin | 2 |
+| claude-skill-generate-docs | Shell | AI-Powered Documentation Generator | https://github.com/mfbari/claude-skill-generate-docs | 2 |
+| openclaw-skill | Shell | Complete OpenClaw documentation as a skill - 333 pages | https://github.com/brabaflow/openclaw-skill | 7 |
+| cli-code-skills | - | Production-ready skills — audit, design docs, generate docs | https://github.com/Destynova2/cli-code-skills | 2 |
+| idea-to-docs | - | Convert PRDs into production-grade technical documentation | https://github.com/CloveSVG/idea-to-docs | 3 |
 
 ---
 
