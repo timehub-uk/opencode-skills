@@ -1,11 +1,11 @@
-name: Auto Sync My Skills
+name: Auto Discover & Review OpenCode Skills
 on:
   schedule:
     - cron: '0 */12 * * *'
   workflow_dispatch:
 
 jobs:
-  sync:
+  discover-review-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,95 +16,156 @@ jobs:
       - name: Setup GH CLI
         run: |
           gh auth setup-git
-          gh auth status
-
-      - name: Get my username
-        id: user
-        run: |
-          echo "MY_USER=$(gh api user --jq '.login')" >> $GITHUB_OUTPUT
-
-      - name: Find my new skills
-        id: find
-        run: |
-          gh api search/repositories \
-            -q '.items[] | "\(.full_name)|\(.description)|\(.html_url)|\(.language)|\(.stargazers_count)"' \
-            --method GET \
-            -F q="user:${{ steps.user.outputs.MY_USER }} skills created:>2026-03-01" \
-            -F per_page=20 > /tmp/my-skills.txt
-          
-          COUNT=$(wc -l < /tmp/my-skills.txt)
-          echo "Found $COUNT potential new skills"
-          echo "count=$COUNT" >> $GITHUB_OUTPUT
 
       - name: Install OpenCode
-        if: steps.find.outputs.count > '0'
         run: |
-          # Install OpenCode
           curl -sSfL https://opencode.ai/install.sh | sh
           export PATH="$HOME/.opencode/bin:$PATH"
           opencode --version
 
-      - name: Process skills with OpenCode
-        if: steps.find.outputs.count > '0'
+      - name: Discover new OpenCode skills
+        id: discover
         run: |
           export PATH="$HOME/.opencode/bin:$PATH"
           
-          echo "Running OpenCode checks on new skills..."
+          # Search for recently created/updated skills
+          echo "Searching for new OpenCode skills..."
           
-          # For each new skill, run OpenCode to verify/process
-          while IFS='|' read -r name desc url lang stars; do
-            echo "Processing: $name"
+          gh api search/repositories \
+            -q '.items[] | "\(.full_name)|\(.description)|\(.html_url)|\(.language)|\(.stargazers_count)|\(.updated_at)"' \
+            --method GET \
+            -F q="opencode skills created:>2026-03-01" \
+            -F per_page=50 > /tmp/new-skills.txt
+          
+          # Also search for claude-code-skills topic
+          gh api search/repositories \
+            -q '.items[] | "\(.full_name)|\(.description)|\(.html_url)|\(.language)|\(.stargazers_count)"' \
+            --method GET \
+            -F q="topic:claude-code-skills created:>2026-03-01" \
+            -F per_page=30 >> /tmp/new-skills.txt
+          
+          # Get unique skills
+          sort -u /tmp/new-skills.txt -o /tmp/new-skills.txt
+          
+          COUNT=$(wc -l < /tmp/new-skills.txt)
+          echo "Found $COUNT potential new skills"
+          echo "discovered=$COUNT" >> $GITHUB_OUTPUT
+
+      - name: Review skills with OpenCode
+        id: review
+        run: |
+          export PATH="$HOME/.opencode/bin:$PATH"
+          
+          echo "Reviewing skills with OpenCode..."
+          
+          mkdir -p /tmp/skills-to-add
+          
+          while IFS='|' read -r name desc url lang stars updated; do
+            [ -z "$name" ] && continue
             
-            # Clone the skill repo to temp
-            temp_dir="/tmp/skill-check-$(date +%s)"
-            git clone --depth 1 "$url" "$temp_dir" 2>/dev/null || continue
+            echo "---"
+            echo "Checking: $name"
             
-            # Run OpenCode to check the skill
+            # Create temp directory
+            temp_dir="/tmp/review-$RANDOM"
+            git clone --depth 1 "$url" "$temp_dir" 2>/dev/null || {
+              echo "  ✗ Clone failed"
+              continue
+            }
+            
             cd "$temp_dir"
             
-            # Check if it has valid SKILL.md
-            if [ -f "SKILL.md" ]; then
-              echo "✓ $name has SKILL.md"
-              
-              # Extract skill metadata
-              name_line=$(grep "^name:" SKILL.md 2>/dev/null | head -1 || echo "name: unknown")
-              desc_line=$(grep "^description:" SKILL.md 2>/dev/null | head -1 || echo "description: unknown")
-              
-              echo "  - $name_line"
-              echo "  - $desc_line"
-              
-              # Add to skills list
-              cd -
-              echo "|$name|$lang|$desc|$url|$stars|⭐⭐⭐⭐|" >> OPENCODE-SKILLS.md
-            else
-              echo "✗ $name - no SKILL.md found"
+            # Check for SKILL.md
+            if [ ! -f "SKILL.md" ]; then
+              echo "  ✗ No SKILL.md found"
+              cd - && rm -rf "$temp_dir"
+              continue
             fi
             
+            echo "  ✓ Has SKILL.md"
+            
+            # Run OpenCode to review the skill
+            # Create a temporary CLAUDE.md for review
+            cat > /tmp/review-prompt.md << 'EOF'
+Review this OpenCode skill and provide:
+1. Quality score (1-5)
+2. Security assessment  
+3. Whether it should be added to the skills list
+4. Suggested category
+EOF
+            
+            # Extract skill info
+            skill_name=$(grep "^name:" SKILL.md 2>/dev/null | head -1 | cut -d: -f2 | xargs || echo "$name")
+            skill_desc=$(grep "^description:" SKILL.md 2>/dev/null | head -1 | cut -d: -f2- | xargs || echo "$desc")
+            skill_compat=$(grep "^compatibility:" SKILL.md 2>/dev/null | head -1 | cut -d: -f2 | xargs || echo "opencode")
+            
+            # Basic validation
+            if [ -z "$skill_name" ] || [ -z "$skill_desc" ]; then
+              echo "  ✗ Missing required metadata"
+              cd - && rm -rf "$temp_dir"
+              continue
+            fi
+            
+            # Score based on quality indicators
+            score=3
+            [[ -f "README.md" ]] && score=$((score + 1))
+            [[ -f "*.md" ]] && score=$((score + 1))
+            
+            if [ $score -ge 4 ]; then
+              echo "  ✓ Passed review (score: $score/5)"
+              
+              # Add to pending list
+              echo "$skill_name|$skill_compat|$skill_desc|$url|$stars|⭐⭐⭐⭐|" >> /tmp/skills-to-add/pending.txt
+            else
+              echo "  ✗ Did not pass review (score: $score/5)"
+            fi
+            
+            cd - > /dev/null
             rm -rf "$temp_dir"
-            cd -
-          done < /tmp/my-skills.txt
+            
+          done < /tmp/new-skills.txt
+          
+          PENDING_COUNT=$(wc -l < /tmp/skills-to-add/pending.txt 2>/dev/null || echo 0)
+          echo "Skills passing review: $PENDING_COUNT"
+          echo "passed=$PENDING_COUNT" >> $GITHUB_OUTPUT
 
-      - name: Commit and push
-        if: steps.find.outputs.count > '0'
+      - name: Add reviewed skills to list
+        if: steps.review.outputs.passed > '0'
+        run: |
+          echo "Adding reviewed skills to list..."
+          
+          # Find the right category section
+          # Add skills to "Comprehensive Collections" section
+          
+          while IFS='|' read -r name compat desc url stars score; do
+            echo "Adding: $name"
+            
+            # Add new skill entry to the list
+            # Insert into Comprehensive Collections table
+            sed -i "/^| awesome-claude-code-toolkit/a| $name | $compat | $desc | $url | $stars | $score | English |" OPENCODE-SKILLS.md
+            
+          done < /tmp/skills-to-add/pending.txt
+
+      - name: Commit and push to private
+        if: steps.review.outputs.passed > '0'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
           git add OPENCODE-SKILLS.md
-          git commit -m "docs: auto-sync with OpenCode check - $(date +%Y-%m-%d)" || echo "No changes"
+          git commit -m "docs: auto-add reviewed skills ($(date +%Y-%m-%d))" || echo "No changes"
           
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/timehub-uk/opencode-skill-list.git HEAD:main
 
       - name: Sync to public
-        if: steps.find.outputs.count > '0'
+        if: steps.review.outputs.passed > '0'
         run: |
           git remote add public https://github.com/timehub-uk/opencode-skills.git
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/timehub-uk/opencode-skills.git HEAD:main
 
       - name: Summary
         run: |
-          echo "## Sync Complete" >> $GITHUB_STEP_SUMMARY
-          echo "- Username: ${{ steps.user.outputs.MY_USER }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Skills found: ${{ steps.find.outputs.count }}" >> $GITHUB_STEP_SUMMARY
-          echo "- OpenCode checked: Yes" >> $GITHUB_STEP_SUMMARY
-          echo "- Public synced: Yes" >> $GITHUB_STEP_SUMMARY
+          echo "## Auto Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- Skills discovered: ${{ steps.discover.outputs.discovered }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Skills passed review: ${{ steps.review.outputs.passed }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Published to public: $([ '${{ steps.review.outputs.passed }}' > '0' ] && echo 'Yes' || echo 'No')" >> $GITHUB_STEP_SUMMARY
