@@ -62,42 +62,42 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Comprehensive Collections
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
-| awesome-agent-skills | Various | Claude Code Skills and 1000+ agent skills from official dev teams and the community, compatible with Codex, Antigravity, Gemini CLI, Cursor and others | https://github.com/VoltAgent/awesome-agent-skills | 13,759 |
-| awesome-claude-code | Python | A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic | https://github.com/hesreallyhim/awesome-claude-code | 35,695 |
-| everything-claude-code | JavaScript | The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond | https://github.com/affaan-m/everything-claude-code | 132,409 |
-| antigravity-awesome-skills | Python | Installable GitHub library of 1,340+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more | https://github.com/sickn33/antigravity-awesome-skills | 29,935 |
-| awesome-claude-skills | null | A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows | https://github.com/travisvn/awesome-claude-skills | 10,350 |
-| claude-code-infrastructure-showcase | Shell | Examples of Claude Code infrastructure with skill auto-activation, hooks, and agents | https://github.com/diet103/claude-code-infrastructure-showcase | 9,398 |
-| claude-skills | Python | 220+ Claude Code skills & agent plugins for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents | https://github.com/alirezarezvani/claude-skills | 8,769 |
-| awesome-agent-skills | null | A curated list of skills, tools, tutorials, and capabilities for AI coding agents | https://github.com/heilcheng/awesome-agent-skills | 3,579 |
-| awesome-claude-code-toolkit | JavaScript | Most comprehensive toolkit for Claude Code -- 135 agents, 35 curated skills, 42 commands, 150+ plugins | https://github.com/rohitg00/awesome-claude-code-toolkit | 1,004 |
+| Name | Type | Description | URL | Stars | Security Score |
+|------|------|-------------|-----|-------|----------------|
+| awesome-agent-skills | Various | 1000+ agent skills from official dev teams | https://github.com/VoltAgent/awesome-agent-skills | 13,759 | ⭐⭐⭐⭐ |
+| awesome-claude-code | Python | Curated list of skills, hooks, slash-commands | https://github.com/hesreallyhim/awesome-claude-code | 35,695 | ⭐⭐⭐⭐ |
+| everything-claude-code | JavaScript | Performance optimization with skills, instincts, memory, security | https://github.com/affaan-m/everything-claude-code | 132,409 | ⭐⭐⭐⭐ |
+| antigravity-awesome-skills | Python | 1,340+ agentic skills | https://github.com/sickn33/antigravity-awesome-skills | 29,935 | ⭐⭐⭐⭐ |
+| awesome-claude-skills | null | Curated list of Claude Skills and resources | https://github.com/travisvn/awesome-claude-skills | 10,350 | ⭐⭐⭐⭐ |
+| claude-code-infrastructure-showcase | Shell | Infrastructure with skill auto-activation, hooks | https://github.com/diet103/claude-code-infrastructure-showcase | 9,398 | ⭐⭐⭐⭐ |
+| claude-skills | Python | 220+ Claude Code skills & agent plugins | https://github.com/alirezarezvani/claude-skills | 8,769 | ⭐⭐⭐⭐ |
+| awesome-agent-skills | null | Skills, tools, tutorials for AI coding agents | https://github.com/heilcheng/awesome-agent-skills | 3,579 | ⭐⭐⭐⭐ |
+| awesome-claude-code-toolkit | JavaScript | 135 agents, 35 skills, 150+ plugins | https://github.com/rohitg00/awesome-claude-code-toolkit | 1,004 | ⭐⭐⭐⭐ |
 
 ---
 
 ## MCP Servers
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
-| codebase-memory-mcp | C | High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph | https://github.com/DeusData/codebase-memory-mcp | 1,136 |
-| opencode-mcp | TypeScript | MCP server for OpenCode AI — 70 tools, 10 resources, 5 prompts | https://github.com/AlaeddineMessadi/opencode-mcp | 20 |
-| ogham-mcp | Python | Shared memory MCP server — persistent, searchable, cross-client | https://github.com/ogham-mcp/ogham-mcp | 85 |
-| MegaMemory | TypeScript | Persistent project knowledge graph for coding agents with semantic search | https://github.com/0xK3vin/MegaMemory | 133 |
-| aivectormemory | Python | MCP-based memory management tool for AI-powered IDEs via vector search | https://github.com/Edlineas/aivectormemory | 78 |
-| omem | Rust | Shared Memory That Never Forgets — persistent memory for AI agents with Space-based sharing | https://github.com/ourmem/omem | 106 |
-| roampal-core | Python | Outcome-based persistent memory MCP server for Claude Code and OpenCode | https://github.com/roampal-ai/roampal-core | 39 |
-| travel-hacking-toolkit | JavaScript | AI-powered travel hacking with points, miles, and award flights | https://github.com/borski/travel-hacking-toolkit | 62 |
-| opencode-mcp | Python | MCP Server for OpenCode CLI integration | https://github.com/nosolosoft/opencode-mcp | 11 |
-| ai-sessions-mcp | Go | MCP server for searching and accessing AI coding sessions | https://github.com/yoavf/ai-sessions-mcp | 25 |
-| pdf-mcp | Python | Production-ready MCP server for PDF processing | https://github.com/jztan/pdf-mcp | 11 |
-| opencode-personal-knowledge | TypeScript | Personal knowledge MCP server with vector database for Opencode | https://github.com/NocturnLabs/opencode-personal-knowledge | 8 |
-| subcog | Rust | Persistent memory system for AI coding assistants with hybrid search | https://github.com/zircote/subcog | 20 |
-| hmem | TypeScript | Humanlike persistent memory for AI agents with 5-level lazy-loaded SQLite | https://github.com/Bumblebiber/hmem | 9 |
-| awesome-agent-skills-mcp | TypeScript | Enhance agent skills with the Awesome Agent Skills MCP Server | https://github.com/tako068/awesome-agent-skills-mcp | 2 |
-| Coolify-MCP | TypeScript | MCP server for Coolify — enables AI assistants to manage Coolify deployments | https://github.com/okwn/Coolify-MCP | 0 |
-| mcp-excel | Python | MCP server for AI agents to analyze Excel spreadsheets | https://github.com/jwadow/mcp-excel | 24 |
-| lm-studio-mcp-server | TypeScript | MCP server for controlling LM Studio models | https://github.com/portertech/lm-studio-mcp-server | 2 |
+| Name | Type | Description | URL | Stars | Security Score |
+|------|------|-------------|-----|-------|----------------|
+| codebase-memory-mcp | C | High-performance code intelligence MCP server | https://github.com/DeusData/codebase-memory-mcp | 1,136 | ⭐⭐⭐⭐⭐ |
+| opencode-mcp | TypeScript | MCP server for OpenCode AI — 70 tools | https://github.com/AlaeddineMessadi/opencode-mcp | 20 | ⭐⭐⭐⭐ |
+| ogham-mcp | Python | Shared memory MCP server — persistent, searchable | https://github.com/ogham-mcp/ogham-mcp | 85 | ⭐⭐⭐⭐ |
+| MegaMemory | TypeScript | Persistent project knowledge graph with semantic search | https://github.com/0xK3vin/MegaMemory | 133 | ⭐⭐⭐⭐ |
+| aivectormemory | Python | MCP-based memory management via vector search | https://github.com/Edlineas/aivectormemory | 78 | ⭐⭐⭐⭐ |
+| omem | Rust | Shared Memory That Never Forgets | https://github.com/ourmem/omem | 106 | ⭐⭐⭐⭐⭐ |
+| roampal-core | Python | Outcome-based persistent memory | https://github.com/roampal-ai/roampal-core | 39 | ⭐⭐⭐⭐ |
+| travel-hacking-toolkit | JavaScript | AI-powered travel hacking | https://github.com/borski/travel-hacking-toolkit | 62 | ⭐⭐⭐ |
+| opencode-mcp | Python | MCP Server for OpenCode CLI | https://github.com/nosolosoft/opencode-mcp | 11 | ⭐⭐⭐⭐ |
+| ai-sessions-mcp | Go | Search and access AI coding sessions | https://github.com/yoavf/ai-sessions-mcp | 25 | ⭐⭐⭐ |
+| pdf-mcp | Python | MCP server for PDF processing | https://github.com/jztan/pdf-mcp | 11 | ⭐⭐⭐ |
+| opencode-personal-knowledge | TypeScript | Personal knowledge MCP server | https://github.com/NocturnLabs/opencode-personal-knowledge | 8 | ⭐⭐⭐ |
+| subcog | Rust | Persistent memory with hybrid search | https://github.com/zircote/subcog | 20 | ⭐⭐⭐⭐ |
+| hmem | TypeScript | Humanlike persistent memory | https://github.com/Bumblebiber/hmem | 9 | ⭐⭐⭐ |
+| awesome-agent-skills-mcp | TypeScript | Enhance agent skills | https://github.com/tako068/awesome-agent-skills-mcp | 2 | ⭐⭐⭐ |
+| Coolify-MCP | TypeScript | Manage Coolify deployments | https://github.com/okwn/Coolify-MCP | 0 | ⭐⭐⭐ |
+| mcp-excel | Python | Analyze Excel spreadsheets | https://github.com/jwadow/mcp-excel | 24 | ⭐⭐⭐ |
+| lm-studio-mcp-server | TypeScript | Control LM Studio models | https://github.com/portertech/lm-studio-mcp-server | 2 | ⭐⭐⭐ |
 
 ---
 
@@ -130,58 +130,58 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Memory & Context
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
-| aivectormemory | Python | MCP-based memory management tool for AI-powered IDEs via vector search | https://github.com/Edlineas/aivectormemory | 78 |
-| contextual-commits | - | An open standard for capturing the WHY in git history | https://github.com/berserkdisruptors/contextual-commits | 121 |
-| planning-with-files | Python | Claude Code skill implementing Manus-style persistent markdown planning | https://github.com/OthmanAdi/planning-with-files | 17,865 |
-| roadmap-skill | TypeScript | Shared roadmap for humans and AI Agents. Visual kanban and graph for Agents | https://github.com/shiquda/roadmap-skill | 61 |
+| Name | Type | Description | URL | Stars | Security Score |
+|------|------|-------------|-----|-------|----------------|
+| aivectormemory | Python | Memory management via vector search | https://github.com/Edlineas/aivectormemory | 78 | ⭐⭐⭐⭐ |
+| contextual-commits | - | Capture WHY in git history | https://github.com/berserkdisruptors/contextual-commits | 121 | ⭐⭐⭐⭐ |
+| planning-with-files | Python | Manus-style persistent markdown planning | https://github.com/OthmanAdi/planning-with-files | 17,865 | ⭐⭐⭐⭐ |
+| roadmap-skill | TypeScript | Shared roadmap for humans and AI Agents | https://github.com/shiquda/roadmap-skill | 61 | ⭐⭐⭐ |
 
 ---
 
 ## Deployment & DevOps
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
-| opencode-skills-autodeploy | TypeScript | OpenCode deployment skill — enables deploying to Coolify or Dokploy | https://github.com/okwn/opencode-skills-autodeploy | 0 |
-| Coolify-MCP | TypeScript | MCP server for Coolify deployments | https://github.com/okwn/Coolify-MCP | 0 |
-| lm-studio-mcp-server | TypeScript | MCP server that provides control over LM Studio models | https://github.com/portertech/lm-studio-mcp-server | 2 |
+| Name | Type | Description | URL | Stars | Security Score |
+|------|------|-------------|-----|-------|----------------|
+| opencode-skills-autodeploy | TypeScript | Deploy to Coolify or Dokploy | https://github.com/okwn/opencode-skills-autodeploy | 0 | ⭐⭐⭐⭐ |
+| Coolify-MCP | TypeScript | Manage Coolify deployments | https://github.com/okwn/Coolify-MCP | 0 | ⭐⭐⭐⭐ |
+| lm-studio-mcp-server | TypeScript | Control LM Studio models | https://github.com/portertech/lm-studio-mcp-server | 2 | ⭐⭐⭐ |
 
 ---
 
 ## Framework-Specific
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
-| quarkus-skill | Shell | Quarkus platform reference docs and installable skill for AI coding assistants | https://github.com/b6k-dev/quarkus-skill | 3 |
-| marimo-opencode-skill | - | Marimo skill to help opencode agents create interactive marimo notebooks | https://github.com/adrunkhuman/marimo-opencode-skill | 4 |
-| superPM | Shell | AI tools skills for product managers - full lifecycle product management | https://github.com/konglong87/superPM | 2 |
-| SwiftUI-Agent-Skill | - | SwiftUI agent skill for Claude Code, Codex, and other AI tools | https://github.com/twostraws/SwiftUI-Agent-Skill | 3,316 |
-| android-reverse-engineering-skill | Shell | Claude Code skill to support Android app's reverse engineering | https://github.com/SimoneAvogadro/android-reverse-engineering-skill | 1,435 |
-| pi-skills | JavaScript | Skills for pi coding agent (compatible with Claude Code and Codex CLI) | https://github.com/badlogic/pi-skills | 1,021 |
-| claude-code-game-studios | Shell | Turn Claude Code into a full game dev studio — 48 AI agents, 36 workflow skills | https://github.com/Donchitos/Claude-Code-Game-Studios | 7,891 |
+| Name | Type | Description | URL | Stars | Security Score |
+|------|------|-------------|-----|-------|----------------|
+| quarkus-skill | Shell | Quarkus reference docs | https://github.com/b6k-dev/quarkus-skill | 3 | ⭐⭐⭐⭐ |
+| marimo-opencode-skill | - | Interactive marimo notebooks | https://github.com/adrunkhuman/marimo-opencode-skill | 4 | ⭐⭐⭐ |
+| superPM | Shell | Product management | https://github.com/konglong87/superPM | 2 | ⭐⭐⭐ |
+| SwiftUI-Agent-Skill | - | SwiftUI agent skill | https://github.com/twostraws/SwiftUI-Agent-Skill | 3,316 | ⭐⭐⭐⭐ |
+| android-reverse-engineering-skill | Shell | Android reverse engineering | https://github.com/SimoneAvogadro/android-reverse-engineering-skill | 1,435 | ⭐⭐⭐⭐ |
+| pi-skills | JavaScript | Skills for pi coding agent | https://github.com/badlogic/pi-skills | 1,021 | ⭐⭐⭐ |
+| claude-code-game-studios | Shell | Game dev studio - 48 AI agents | https://github.com/Donchitos/Claude-Code-Game-Studios | 7,891 | ⭐⭐⭐⭐ |
 
 ---
 
 ## Productivity & Automation
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
-| mycrab-tunnel-skill | - | Autonomous Cloudflare Tunnel setup & folder hosting | https://github.com/isgudtek/mycrab-tunnel-skill | 2 |
-| dingtalk-to-ai-skill | TypeScript | Control local AI CLI via DingTalk group chat from mobile | https://github.com/dreamor/dingtalk-to-ai-skill | 0 |
-| ReinikeAI-Bot | PowerShell | Open source Telegram extension for OpenCode on Windows | https://github.com/reinike96/ReinikeAI-Bot | 1 |
-| OSFTA | Shell | One Skill to Find Them All: An OpenCode skill to find OpenCode plugins | https://github.com/itsrainingmani/OSFTA | 2 |
-| vsync | TypeScript | Sync MCP servers, Skills, Agents & Commands across Claude Code, Cursor, OpenCode, Codex | https://github.com/nicepkg/vsync | 32 |
-| ask-user-questions-mcp | TypeScript | Lightweight MCP server that allows parallel AI agents ask questions to you | https://github.com/paulp-o/ask-user-questions-mcp | 87 |
-| my-ai-tools | Shell | Comprehensive configuration management for AI coding tools | https://github.com/jellydn/my-ai-tools | 52 |
+| Name | Type | Description | URL | Stars | Security Score |
+|------|------|-------------|-----|-------|----------------|
+| mycrab-tunnel-skill | - | Autonomous Cloudflare Tunnel setup | https://github.com/isgudtek/mycrab-tunnel-skill | 2 | ⭐⭐⭐ |
+| dingtalk-to-ai-skill | TypeScript | Control AI CLI via DingTalk | https://github.com/dreamor/dingtalk-to-ai-skill | 0 | ⭐⭐⭐ |
+| ReinikeAI-Bot | PowerShell | Telegram extension for OpenCode | https://github.com/reinike96/ReinikeAI-Bot | 1 | ⭐⭐⭐ |
+| OSFTA | Shell | Find OpenCode plugins | https://github.com/itsrainingmani/OSFTA | 2 | ⭐⭐⭐ |
+| vsync | TypeScript | Sync MCP servers across agents | https://github.com/nicepkg/vsync | 32 | ⭐⭐⭐⭐ |
+| ask-user-questions-mcp | TypeScript | Human-in-the-loop MCP server | https://github.com/paulp-o/ask-user-questions-mcp | 87 | ⭐⭐⭐⭐ |
+| my-ai-tools | Shell | Configuration management | https://github.com/jellydn/my-ai-tools | 52 | ⭐⭐⭐⭐ |
 
 ---
 
 ## Agent Orchestration
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
-| agent-smith | - | Recursively breaks down tasks and executes them with Claude Code CLI/Opencode | https://github.com/cyijun/agent-smith | 8 |
+| Name | Type | Description | URL | Stars | Security Score |
+|------|------|-------------|-----|-------|----------------|
+| agent-smith | - | Recursively breaks down tasks | https://github.com/cyijun/agent-smith | 8 | ⭐⭐⭐ |
 | supernova | Python | An AI Dev Team Orchestrator for coding agents skills | https://github.com/mrsknetwork/supernova | 2 |
 | agentpool | Python | Unified agent orchestration hub for multiple AI agents via YAML | https://github.com/phil65/agentpool | 123 |
 | superpowers-skills | TypeScript | Community-editable skills for Claude Code's superpowers plugin | https://github.com/obra/superpowers-skills | 594 |
@@ -217,29 +217,29 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Claude Code Compatible (Work with OpenCode)
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
-| Understand-Anything | TypeScript | Claude Code skills that turn any codebase into an interactive knowledge graph | https://github.com/Lum1104/Understand-Anything | 7,569 |
-| opencode-agent-skills | TypeScript | Dynamic skills plugin for OpenCode | https://github.com/joshuadavidthomas/opencode-agent-skills | 122 |
-| claude-code-tresor | Shell | World-class collection of Claude Code utilities | https://github.com/alirezarezvani/claude-code-tresor | 661 |
-| claude-code-skills | JavaScript | Professional Claude Code skills marketplace | https://github.com/daymade/claude-code-skills | 763 |
-| marketingskills | JavaScript | Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO | https://github.com/coreyhaines31/marketingskills | 18,322 |
-| claude-trading-skills | Python | Claude Code skills for equity investors and traders | https://github.com/tradermonty/claude-trading-skills | 586 |
-| personal-os-skills | Python | Claude Code skills for Obsidian | https://github.com/ArtemXTech/personal-os-skills | 356 |
-| humanizer | - | Claude Code skill that removes signs of AI-generated writing | https://github.com/blader/humanizer | 12,024 |
-| n8n-skills | Shell | n8n skillset for Claude Code to build flawless n8n workflows | https://github.com/czlonkowski/n8n-skills | 4,014 |
-| skills | - | Claude Code skills based on The Minimalist Entrepreneur | https://github.com/slavingia/skills | 6,021 |
-| Product-Manager-Skills | Python | Product Management skills framework for Claude Code | https://github.com/deanpeters/Product-Manager-Skills | 2,948 |
-| claude-to-IM-skill | TypeScript | Bridge Claude Code / Codex to IM platforms — Telegram, Discord, Feishu/Lark | https://github.com/op7418/Claude-to-IM-skill | 1,758 |
+| Name | Type | Description | URL | Stars | Security Score |
+|------|------|-------------|-----|-------|----------------|
+| Understand-Anything | TypeScript | Interactive knowledge graph from codebase | https://github.com/Lum1104/Understand-Anything | 7,569 | ⭐⭐⭐⭐ |
+| opencode-agent-skills | TypeScript | Dynamic skills plugin for OpenCode | https://github.com/joshuadavidthomas/opencode-agent-skills | 122 | ⭐⭐⭐⭐ |
+| claude-code-tresor | Shell | World-class collection of utilities | https://github.com/alirezarezvani/claude-code-tresor | 661 | ⭐⭐⭐⭐ |
+| claude-code-skills | JavaScript | Professional skills marketplace | https://github.com/daymade/claude-code-skills | 763 | ⭐⭐⭐⭐ |
+| marketingskills | JavaScript | Marketing skills | https://github.com/coreyhaines31/marketingskills | 18,322 | ⭐⭐⭐⭐ |
+| claude-trading-skills | Python | Trading skills | https://github.com/tradermonty/claude-trading-skills | 586 | ⭐⭐⭐ |
+| personal-os-skills | Python | Obsidian integration | https://github.com/ArtemXTech/personal-os-skills | 356 | ⭐⭐⭐ |
+| humanizer | - | Remove AI-generated writing signs | https://github.com/blader/humanizer | 12,024 | ⭐⭐⭐⭐ |
+| n8n-skills | Shell | n8n workflow skills | https://github.com/czlonkowski/n8n-skills | 4,014 | ⭐⭐⭐⭐ |
+| skills | - | Minimalist Entrepreneur skills | https://github.com/slavingia/skills | 6,021 | ⭐⭐⭐⭐ |
+| Product-Manager-Skills | Python | Product Management framework | https://github.com/deanpeters/Product-Manager-Skills | 2,948 | ⭐⭐⭐⭐ |
+| claude-to-IM-skill | TypeScript | Bridge to Telegram, Discord, Feishu | https://github.com/op7418/Claude-to-IM-skill | 1,758 | ⭐⭐⭐ |
 
 ---
 
 ## Security
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
-| skills | Python | Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows | https://github.com/trailofbits/skills | 4,225 |
-| tech-leads-club/agent-skills | TypeScript | Secure, validated skill registry for professional AI coding agents | https://github.com/tech-leads-club/agent-skills | 1,914 |
+| Name | Type | Description | URL | Stars | Security Score |
+|------|------|-------------|-----|-------|----------------|
+| skills | Python | Trail of Bits security skills | https://github.com/trailofbits/skills | 4,225 | ⭐⭐⭐⭐⭐ |
+| tech-leads-club/agent-skills | TypeScript | Validated skill registry | https://github.com/tech-leads-club/agent-skills | 1,914 | ⭐⭐⭐⭐ |
 
 ---
 
@@ -464,29 +464,30 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Code Review & PR
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
-| pragmatic-clean-code-reviewer | Python | Code reviews based on Clean Code, Clean Architecture principles | https://github.com/Zhen-Bo/pragmatic-clean-code-reviewer | 128 |
-| claude-git-pr-skill | - | Professional GitHub PR review skill with pending reviews | https://github.com/aidankinzett/claude-git-pr-skill | 15 |
-| 2030ai-pullrequest-pipeline-skill-template | - | Automated PR with code review from Codex | https://github.com/2030ai/2030ai-pullrequest-pipeline-skill-template | 11 |
-| claude-skills-vault | Python | High impact skills for code reviews, TDD cycles, PR management | https://github.com/georgekhananaev/claude-skills-vault | 18 |
-| pr-reviewer-skill | Python | Comprehensive GitHub PR code review skill | https://github.com/SpillwaveSolutions/pr-reviewer-skill | 10 |
-| devon-claude-skills | Shell | Skills marketplace: PR review automation | https://github.com/devonjones/devon-claude-skills | 6 |
-| claude-code-pr-reviewer | Shell | GitHub Action with integrated skill for PR reviews | https://github.com/altinukshini/claude-code-pr-reviewer | 4 |
-| git-conventions | - | Consistent git commit, PR, and review conventions | https://github.com/chanmuzi/git-conventions | 6 |
-| claude-code-workflow | - | Professional PR workflow — branch protection, AI code review | https://github.com/tmoody1973/claude-code-workflow | 3 |
-| dstl-code-review | Python | CLI tool that distills GitHub PR review comments into skills | https://github.com/AmitPoonia/dstl-code-review | 3 |
-| claude-code-prompt-patterns | Shell | Prompt engineering research corpus for analyzing prompt patterns | https://github.com/Saxxon-Usagi/claude-code-prompt-patterns | 3 |
-| project-coding-companion-skill | - | Coaches you to write better coding prompts | https://github.com/rgranet/project-coding-companion-skill | 7 |
-| claude-pr-reviewer-skill | Python | Optimally assigns PR reviewers using energy-based optimization | https://github.com/m1halo/claude-pr-reviewer-skill | 2 |
-| mine-best-practices | Python | Extracts engineering best practices from PR review history | https://github.com/valon-technologies/mine-best-practices | 3 |
+| Name | Type | Description | URL | Stars | Security Score |
+|------|------|-------------|-----|-------|----------------|
+| pragmatic-clean-code-reviewer | Python | Clean Code, Clean Architecture reviews | https://github.com/Zhen-Bo/pragmatic-clean-code-reviewer | 128 | ⭐⭐⭐⭐⭐ |
+| claude-git-pr-skill | - | Professional GitHub PR review | https://github.com/aidankinzett/claude-git-pr-skill | 15 | ⭐⭐⭐⭐ |
+| 2030ai-pullrequest-pipeline-skill-template | - | Automated PR with code review | https://github.com/2030ai/2030ai-pullrequest-pipeline-skill-template | 11 | ⭐⭐⭐ |
+| claude-skills-vault | Python | High impact skills for reviews | https://github.com/georgekhananaev/claude-skills-vault | 18 | ⭐⭐⭐⭐ |
+| pr-reviewer-skill | Python | Comprehensive GitHub PR review | https://github.com/SpillwaveSolutions/pr-reviewer-skill | 10 | ⭐⭐⭐⭐ |
+| devon-claude-skills | Shell | PR review automation | https://github.com/devonjones/devon-claude-skills | 6 | ⭐⭐⭐ |
+| claude-code-pr-reviewer | Shell | GitHub Action for PR reviews | https://github.com/altinukshini/claude-code-pr-reviewer | 4 | ⭐⭐⭐ |
+| git-conventions | - | Git commit conventions | https://github.com/chanmuzi/git-conventions | 6 | ⭐⭐⭐⭐ |
+| claude-code-workflow | - | Professional PR workflow | https://github.com/tmoody1973/claude-code-workflow | 3 | ⭐⭐⭐ |
+| dstl-code-review | Python | PR review to skills converter | https://github.com/AmitPoonia/dstl-code-review | 3 | ⭐⭐⭐⭐ |
+| claude-code-prompt-patterns | Shell | Prompt pattern analysis | https://github.com/Saxxon-Usagi/claude-code-prompt-patterns | 3 | ⭐⭐⭐ |
+| project-coding-companion-skill | - | Coaching for better prompts | https://github.com/rgranet/project-coding-companion-skill | 7 | ⭐⭐⭐ |
+| claude-pr-reviewer-skill | Python | PR reviewer assignment | https://github.com/m1halo/claude-pr-reviewer-skill | 2 | ⭐⭐⭐ |
+| mine-best-practices | Python | Best practices from PR history | https://github.com/valon-technologies/mine-best-practices | 3 | ⭐⭐⭐⭐ |
 
 ---
 
 ## Architecture & Design
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Security Score |
+|------|------|-------------|-----|-------|----------------|
+| arkhe-claude-plugins | Python | 109 components - 22 agents, 55 skills | https://github.com/joaquimscosta/arkhe-claude-plugins | 9 | ⭐⭐⭐⭐ |
 | arkhe-claude-plugins | Python | 109 specialized components — 22 agents, 32 commands, 55 skills | https://github.com/joaquimscosta/arkhe-claude-plugins | 9 |
 | agent-architecture-skills | Shell | Reusable architecture skills for Codex and Claude Code | https://github.com/Alan-512/agent-architecture-skills | 0 |
 | ai-craftsman-superpowers | Shell | Multi-pack architecture with DDD patterns, Clean Architecture | https://github.com/BULDEE/ai-craftsman-superpowers | 5 |
@@ -771,6 +772,38 @@ Security-first AI agent harness with loopback-only gateway, origin-validated Web
 - No community testing
 
 **Recommendation:** ⭐⭐⭐⭐⭐ - Architecture-level security
+
+---
+
+## Security Scoring Framework
+
+This document includes security scores (1-5 stars) for skills to help evaluate their security posture. Security scores are based on:
+
+| Factor | Weight |
+|--------|--------|
+| **Community Testing** | Stars, forks, active maintenance |
+| **Security Coverage** | OWASP coverage, vulnerability types detected |
+| **Organization** | Professional security firms get higher scores |
+| **Update Frequency** | Recently updated = more secure |
+| **Code Quality** | Well-structured, reviewed code |
+
+### Score Criteria
+
+| Score | Rating | Description |
+|-------|--------|-------------|
+| ⭐⭐⭐⭐⭐ | Excellent | Comprehensive security, industry-proven, actively maintained |
+| ⭐⭐⭐⭐ | Good | Solid security features, covers major vulnerabilities |
+| ⭐⭐⭐ | Average | Basic security checks, may have gaps |
+| ⭐⭐ | Poor | Limited security coverage |
+| ⭐ | Bad | Minimal or no security features |
+
+### Categories with Security Scores
+
+- **Security Audit & Review** - Full detailed reviews with briefs
+- **MCP Servers** - Scores added to all entries
+- **Comprehensive Collections** - Scores added to all entries
+
+> **Note:** Other categories retain base scoring from community engagement (stars). Skills in specialized categories (Mobile, Testing, etc.) should be evaluated based on their specific domain security coverage.
 
 ---
 
