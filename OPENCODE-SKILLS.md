@@ -90,6 +90,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 | claude-skills | Python | 220+ Claude Code skills & agent plugins | https://github.com/alirezarezvani/claude-skills | 8,769 | ⭐⭐⭐⭐ | English |
 | awesome-agent-skills | null | Skills, tools, tutorials for AI coding agents | https://github.com/heilcheng/awesome-agent-skills | 3,579 | ⭐⭐⭐⭐ | English |
 | awesome-claude-code-toolkit | JavaScript | 135 agents, 35 skills, 150+ plugins | https://github.com/rohitg00/awesome-claude-code-toolkit | 1,004 | ⭐⭐⭐⭐ | English |
+| Vibe-Skills | Python | 340+ governed skills spanning coding, research, automation | https://github.com/foryourhealth111-pixel/Vibe-Skills | 959 | ⭐⭐⭐⭐⭐ | English |
+| goose-skills | Python | GTM skills for Claude Code | https://github.com/gooseworks-ai/goose-skills | 352 | ⭐⭐⭐⭐ | English |
 
 ---
 
@@ -208,26 +210,38 @@ Or manually creating the SKILL.md file in the appropriate location.
 |------|------|-------------|-----|-------|----------------|----------|
 | skills | Python | Trail of Bits security skills | https://github.com/trailofbits/skills | 4,225 | ⭐⭐⭐⭐⭐ | English |
 | tech-leads-club/agent-skills | TypeScript | Validated skill registry | https://github.com/tech-leads-club/agent-skills | 1,914 | ⭐⭐⭐⭐ | English |
+| Anthropic-Cybersecurity-Skills | Python | 753+ cybersecurity skills, MITRE ATT&CK | https://github.com/mukul975/Anthropic-Cybersecurity-Skills | 3,975 | ⭐⭐⭐⭐⭐ | English |
+| VibeSec-Skill | null | Secure code, prevent vulnerabilities | https://github.com/BehiSecc/VibeSec-Skill | 744 | ⭐⭐⭐⭐ | English |
+| skills-curated | Python | Community-vetted marketplace | https://github.com/trailofbits/skills-curated | 320 | ⭐⭐⭐⭐⭐ | English |
 
 ---
 
 ## Marketing & SEO
 
-| Name | Type | Description | URL | Stars | Language |
-|------|------|-------------|-----|-------|----------|
-| marketingskills | JavaScript | CRO, copywriting, SEO, analytics, growth engineering | https://github.com/coreyhaines31/marketingskills | 18,322 | English |
-| claude-seo | Python | Universal SEO skill. 19 sub-skills, 12 subagents | https://github.com/AgriciDaniel/claude-seo | 3,776 | English |
-| seo-geo-claude-skills | Python | 20 SEO & GEO skills | https://github.com/aaron-he-zhu/seo-geo-claude-skills | 814 | English |
+| Name | Type | Description | URL | Stars | Security Score | Language |
+|------|------|-------------|-----|-------|----------------|----------|
+| marketingskills | JavaScript | CRO, copywriting, SEO, analytics | https://github.com/coreyhaines31/marketingskills | 18,322 | ⭐⭐⭐⭐ | English |
+| claude-seo | Python | Universal SEO skill. 19 sub-skills | https://github.com/AgriciDaniel/claude-seo | 3,776 | ⭐⭐⭐⭐ | English |
+| seo-geo-claude-skills | Python | 20 SEO & GEO skills | https://github.com/aaron-he-zhu/seo-geo-claude-skills | 814 | ⭐⭐⭐⭐ | English |
+| ai-marketing-claude | Python | 15 marketing skills, website audit, copy, emails | https://github.com/zubair-trabzada/ai-marketing-claude | 1,028 | ⭐⭐⭐⭐ | English |
+| claude-ads | Python | Paid advertising audit - Google, Meta, YouTube | https://github.com/AgriciDaniel/claude-ads | 1,543 | ⭐⭐⭐⭐ | English |
+| geo-seo-claude | Python | GEO-first SEO, AI search optimization | https://github.com/zubair-trabzada/geo-seo-claude | 4,689 | ⭐⭐⭐⭐ | English |
+| claude-blog | Python | Blog content creation, optimization | https://github.com/AgriciDaniel/claude-blog | 370 | ⭐⭐⭐⭐ | English |
+| ai-marketing-skills | Python | Growth experiments, sales pipeline, SEO | https://github.com/ericosiu/ai-marketing-skills | 573 | ⭐⭐⭐⭐ | English |
+| ai-sales-team-claude | Python | AI sales team - research, leads, outreach | https://github.com/zubair-trabzada/ai-sales-team-claude | 199 | ⭐⭐⭐⭐ | English |
 
 ---
 
 ## Product & Project Management
 
-| Name | Type | Description | URL | Stars | Language |
-|------|------|-------------|-----|-------|----------|
-| superPM | Shell | AI tools skills for product managers | https://github.com/konglong87/superPM | 2 | Chinese |
-| Product-Manager-Skills | Python | Product Management skills framework | https://github.com/deanpeters/Product-Manager-Skills | 2,948 | English |
-| planning-with-files | Python | Manus-style persistent markdown planning | https://github.com/OthmanAdi/planning-with-files | 17,865 | English |
+| Name | Type | Description | URL | Stars | Security Score | Language |
+|------|------|-------------|-----|-------|----------------|----------|
+| superPM | Shell | AI tools skills for product managers | https://github.com/konglong87/superPM | 2 | ⭐⭐⭐ | Chinese |
+| Product-Manager-Skills | Python | Product Management skills framework | https://github.com/deanpeters/Product-Manager-Skills | 2,948 | ⭐⭐⭐⭐ | English |
+| planning-with-files | Python | Manus-style persistent markdown planning | https://github.com/OthmanAdi/planning-with-files | 17,865 | ⭐⭐⭐⭐ | English |
+| dbskill | null | Business diagnosis skills | https://github.com/dontbesilent2025/dbskill | 2,071 | ⭐⭐⭐ | Chinese |
+| claude-code-pm-skills | null | 20 production-ready PM skills | https://github.com/Mehdibargach/claude-code-pm-skills | 75 | ⭐⭐⭐⭐ | English |
+| pm-claude-skills | null | 5 PM skills | https://github.com/aakashg/pm-claude-skills | 65 | ⭐⭐⭐ | English |
 
 ---
 
@@ -260,18 +274,20 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Cloud & DevOps
 
-| Name | Type | Description | URL | Stars | Language |
-|------|------|-------------|-----|-------|----------|
-| claude-ai-spring-boot | - | Claude Code template for Spring Boot | https://github.com/piomin/claude-ai-spring-boot | 965 | English |
-| learn-docker-and-k8s | Shell | Interactive game to learn Docker, K8s | https://github.com/ericboy0224/learn-docker-and-k8s | 366 | English |
-| seakills | Python | AI agent skills for Sealos Cloud | https://github.com/labring/seakills | 12 | English |
-| skills | Shell | DevOps, infrastructure, security skills | https://github.com/iuliandita/skills | 3 | English |
-| infraclaude | TypeScript | Infrastructure Management MCP | https://github.com/batu-sonmez/infraclaude | 0 | English |
-| devopsline | Python | DevOps status line - K8s, AWS | https://github.com/snirkap/devopsline | 2 | English |
-| opsmate | Go | Infrastructure understanding | https://github.com/Paffin/opsmate | 0 | English |
-| secure-cloud-prompt-engineering | Shell | IaC security reviews | https://github.com/uttej-badwane/secure-cloud-prompt-engineering | 1 | English |
-| clauderon | Rust | Docker/Kubernetes session manager | https://github.com/garettmd/clauderon | 0 | English |
-| Ultimate-Agentic-DevOps-with-Claude-Code | HTML | AWS infrastructure with AI agents | https://github.com/pravinmishraaws/Ultimate-Agentic-DevOps-with-Claude-Code | 13 | English |
+| Name | Type | Description | URL | Stars | Security Score | Language |
+|------|------|-------------|-----|-------|----------------|----------|
+| claude-ai-spring-boot | - | Claude Code template for Spring Boot | https://github.com/piomin/claude-ai-spring-boot | 965 | ⭐⭐⭐⭐ | English |
+| learn-docker-and-k8s | Shell | Interactive game to learn Docker, K8s | https://github.com/ericboy0224/learn-docker-and-k8s | 366 | ⭐⭐⭐⭐ | English |
+| seakills | Python | AI agent skills for Sealos Cloud | https://github.com/labring/seakills | 12 | ⭐⭐⭐⭐ | English |
+| skills | Shell | DevOps, infrastructure, security skills | https://github.com/iuliandita/skills | 3 | ⭐⭐⭐ | English |
+| infraclaude | TypeScript | Infrastructure Management MCP | https://github.com/batu-sonmez/infraclaude | 0 | ⭐⭐⭐ | English |
+| devopsline | Python | DevOps status line - K8s, AWS | https://github.com/snirkap/devopsline | 2 | ⭐⭐⭐ | English |
+| opsmate | Go | Infrastructure understanding | https://github.com/Paffin/opsmate | 0 | ⭐⭐⭐⭐ | English |
+| secure-cloud-prompt-engineering | Shell | IaC security reviews | https://github.com/uttej-badwane/secure-cloud-prompt-engineering | 1 | ⭐⭐⭐⭐ | English |
+| clauderon | Rust | Docker/Kubernetes session manager | https://github.com/garettmd/clauderon | 0 | ⭐⭐⭐⭐ | English |
+| Ultimate-Agentic-DevOps-with-Claude-Code | HTML | AWS infrastructure with AI agents | https://github.com/pravinmishraaws/Ultimate-Agentic-DevOps-with-Claude-Code | 13 | ⭐⭐⭐⭐⭐ | English |
+| awesome-claude-code-config | Shell | Production-ready config with self-improvement | https://github.com/Mizoreww/awesome-claude-code-config | 200 | ⭐⭐⭐⭐⭐ | English |
+| claude-code-blueprint | Shell | Production-grade configuration | https://github.com/Aedelon/claude-code-blueprint | 64 | ⭐⭐⭐⭐ | English |
 
 ---
 
@@ -298,12 +314,17 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Academic & Research
 
-| Name | Type | Description | URL | Stars | Language |
-|------|------|-------------|-----|-------|----------|
-| academic-research-skills | TeX | Research → write → review → revise | https://github.com/Imbad0202/academic-research-skills | 1,796 | English |
-| AI-Research-SKILLs | TeX | AI research and engineering | https://github.com/Orchestra-Research/AI-Research-SKILLs | 5,995 | English |
-| claudeblattman | HTML | Claude Code for academics | https://github.com/chrisblattman/claudeblattman | 248 | English |
-| bioSkills | Python | Bioinformatics skills | https://github.com/GPTomics/bioSkills | 434 | English |
+| Name | Type | Description | URL | Stars | Security Score | Language |
+|------|------|-------------|-----|-------|----------------|----------|
+| academic-research-skills | TeX | Research → write → review → revise | https://github.com/Imbad0202/academic-research-skills | 1,796 | ⭐⭐⭐⭐ | English |
+| AI-Research-SKILLs | TeX | AI research and engineering | https://github.com/Orchestra-Research/AI-Research-SKILLs | 5,995 | ⭐⭐⭐⭐⭐ | English |
+| claudeblattman | HTML | Claude Code for academics | https://github.com/chrisblattman/claudeblattman | 248 | ⭐⭐⭐⭐ | English |
+| bioSkills | Python | Bioinformatics skills | https://github.com/GPTomics/bioSkills | 434 | ⭐⭐⭐⭐ | English |
+| godogen | Python | Build Godot 4 projects from description | https://github.com/htdt/godogen | 2,456 | ⭐⭐⭐⭐ | English |
+| dailypaper-skills | Python | Academic paper workflow | https://github.com/huangkiki/dailypaper-skills | 444 | ⭐⭐⭐ | Chinese |
+| tutor-skills | Shell | Codebase to Obsidian study vault | https://github.com/RoundTable02/tutor-skills | 554 | ⭐⭐⭐⭐ | English |
+| katmer-code | TypeScript | Claude Code inside Obsidian | https://github.com/hkcanan/katmer-code | 300 | ⭐⭐⭐ | Multi |
+| codebase-to-course | CSS | Codebase to interactive HTML course | https://github.com/zarazhangrui/codebase-to-course | 2,884 | ⭐⭐⭐⭐ | English |
 
 ---
 
@@ -471,21 +492,21 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## CLI & Commands
 
-| Name | Type | Description | URL | Stars | Language |
-|------|------|-------------|-----|-------|----------|
-| claude-skills | Shell | Reusable Claude Code slash command skills | https://github.com/NoahWorkman/claude-skills | 2 |
-| claude-code-cheat-sheet | - | Keyboard shortcuts, slash commands, CLI flags reference | https://github.com/wilwaldon/claude-code-cheat-sheet | 6 |
-| claude-skills | - | Custom slash commands for Claude Code CLI | https://github.com/0xSector/claude-skills | 0 |
-| claude-config | Shell | Custom skills (slash commands) for Claude Code CLI | https://github.com/asyncawaiter/claude-config | 0 |
-| claude-skills | - | Shared Claude Code CLI skills — reusable slash commands | https://github.com/unattachedgray/claude-skills | 0 |
-| claude-workbench | TypeScript | GUI management tool for Claude Code CLI | https://github.com/Norman-else/claude-workbench | 7 |
-| gws-claude-setup | Shell | Google Workspace CLI skill and slash commands | https://github.com/kenjudy/gws-claude-setup | 0 |
-| claude-planflow-skills | JavaScript | Interactive Plan Mode + Speckit conversion workflow | https://github.com/devload/claude-planflow-skills | 0 |
-| claude-skills | JavaScript | Reusable slash-command workflows for complex tasks | https://github.com/npow/claude-skills | 0 |
-| claude-kit | TypeScript | Powertools for Claude Code — agents, slash commands, skills | https://github.com/ruchernchong/claude-kit | 0 |
-| claude-marketing | JavaScript | Marketing co-founder — 29 skills, 51 CLI tools, 7 slash commands | https://github.com/whyujjwal/claude-marketing | 0 |
-| agent-add | TypeScript | Install MCP, Skills, slash commands, sub-agents | https://github.com/pea3nut/agent-add | 0 |
-| pm-operating-system | Python | Opinionated workflow system for product managers | https://github.com/mshadmanrahman/pm-operating-system | 0 |
+| Name | Type | Description | URL | Stars | Security Score | Language |
+|------|------|-------------|-----|-------|----------------|----------|
+| claude-skills | Shell | Reusable slash command skills | https://github.com/NoahWorkman/claude-skills | 2 | ⭐⭐⭐ | English |
+| claude-code-cheat-sheet | - | Keyboard shortcuts, CLI flags reference | https://github.com/wilwaldon/claude-code-cheat-sheet | 6 | ⭐⭐⭐⭐ | English |
+| claude-workbench | TypeScript | GUI management tool | https://github.com/Norman-else/claude-workbench | 7 | ⭐⭐⭐⭐ | English |
+| gws-claude-setup | Shell | Google Workspace CLI skill | https://github.com/kenjudy/gws-claude-setup | 0 | ⭐⭐⭐ | English |
+| claude-kit | TypeScript | Powertools - agents, slash commands | https://github.com/ruchernchong/claude-kit | 0 | ⭐⭐⭐⭐ | English |
+| claude-marketing | JavaScript | Marketing co-founder | https://github.com/whyujjwal/claude-marketing | 0 | ⭐⭐⭐⭐ | English |
+| agent-add | TypeScript | Install MCP, Skills, slash commands | https://github.com/pea3nut/agent-add | 0 | ⭐⭐⭐⭐⭐ | English |
+| pm-operating-system | Python | PM workflow system | https://github.com/mshadmanrahman/pm-operating-system | 0 | ⭐⭐⭐⭐ | English |
+| chops | Swift | Browse, edit, manage skills | https://github.com/Shpigford/chops | 1,138 | ⭐⭐⭐⭐⭐ | English |
+| claude-health | null | Audit Claude Code config health | https://github.com/tw93/claude-health | 637 | ⭐⭐⭐⭐ | English |
+| explore-claude-code | JavaScript | Interactive IDE-style docs | https://github.com/LukeRenton/explore-claude-code | 201 | ⭐⭐⭐⭐ | English |
+| claude-code-studio | HTML | Web workspace for Claude Code | https://github.com/Lexus2016/claude-code-studio | 86 | ⭐⭐⭐⭐ | English |
+| awesome-claude-code | null | Curated list of tools, skills | https://github.com/subinium/awesome-claude-code | 69 | ⭐⭐⭐⭐ | English |
 
 ---
 
