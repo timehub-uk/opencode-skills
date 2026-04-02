@@ -2,6 +2,23 @@
 
 > A comprehensive list of open-source skills for OpenCode AI coding assistant
 
+## Language Support / 语言支持 / Support multi-langue
+
+Skills are available in multiple languages. The **Language** column indicates:
+- **English** - Primary documentation in English
+- **Chinese** - 中文 - Primary documentation in Chinese
+- **Multi** - Supports multiple languages
+- **null** - Documentation language not specified
+
+## Supported Languages / 支持的语言:
+| Code | Language |
+|------|-----------|
+| English | English |
+| Chinese | 中文 (Chinese) |
+| Japanese | 日本語 (Japanese) |
+| Multi | Multiple languages |
+| null | Not specified |
+
 ## What are OpenCode Skills?
 
 OpenCode skills are reusable behavior definitions that extend OpenCode's capabilities. They are defined via `SKILL.md` files placed in specific locations:
@@ -62,24 +79,24 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Comprehensive Collections
 
-| Name | Type | Description | URL | Stars | Security Score |
-|------|------|-------------|-----|-------|----------------|
-| awesome-agent-skills | Various | 1000+ agent skills from official dev teams | https://github.com/VoltAgent/awesome-agent-skills | 13,759 | ⭐⭐⭐⭐ |
-| awesome-claude-code | Python | Curated list of skills, hooks, slash-commands | https://github.com/hesreallyhim/awesome-claude-code | 35,695 | ⭐⭐⭐⭐ |
-| everything-claude-code | JavaScript | Performance optimization with skills, instincts, memory, security | https://github.com/affaan-m/everything-claude-code | 132,409 | ⭐⭐⭐⭐ |
-| antigravity-awesome-skills | Python | 1,340+ agentic skills | https://github.com/sickn33/antigravity-awesome-skills | 29,935 | ⭐⭐⭐⭐ |
-| awesome-claude-skills | null | Curated list of Claude Skills and resources | https://github.com/travisvn/awesome-claude-skills | 10,350 | ⭐⭐⭐⭐ |
-| claude-code-infrastructure-showcase | Shell | Infrastructure with skill auto-activation, hooks | https://github.com/diet103/claude-code-infrastructure-showcase | 9,398 | ⭐⭐⭐⭐ |
-| claude-skills | Python | 220+ Claude Code skills & agent plugins | https://github.com/alirezarezvani/claude-skills | 8,769 | ⭐⭐⭐⭐ |
-| awesome-agent-skills | null | Skills, tools, tutorials for AI coding agents | https://github.com/heilcheng/awesome-agent-skills | 3,579 | ⭐⭐⭐⭐ |
-| awesome-claude-code-toolkit | JavaScript | 135 agents, 35 skills, 150+ plugins | https://github.com/rohitg00/awesome-claude-code-toolkit | 1,004 | ⭐⭐⭐⭐ |
+| Name | Type | Description | URL | Stars | Security Score | Language |
+|------|------|-------------|-----|-------|----------------|----------|
+| awesome-agent-skills | Various | 1000+ agent skills from official dev teams | https://github.com/VoltAgent/awesome-agent-skills | 13,759 | ⭐⭐⭐⭐ | English |
+| awesome-claude-code | Python | Curated list of skills, hooks, slash-commands | https://github.com/hesreallyhim/awesome-claude-code | 35,695 | ⭐⭐⭐⭐ | English |
+| everything-claude-code | JavaScript | Performance optimization with skills, instincts, memory, security | https://github.com/affaan-m/everything-claude-code | 132,409 | ⭐⭐⭐⭐ | English |
+| antigravity-awesome-skills | Python | 1,340+ agentic skills | https://github.com/sickn33/antigravity-awesome-skills | 29,935 | ⭐⭐⭐⭐ | English |
+| awesome-claude-skills | null | Curated list of Claude Skills and resources | https://github.com/travisvn/awesome-claude-skills | 10,350 | ⭐⭐⭐⭐ | English |
+| claude-code-infrastructure-showcase | Shell | Infrastructure with skill auto-activation, hooks | https://github.com/diet103/claude-code-infrastructure-showcase | 9,398 | ⭐⭐⭐⭐ | English |
+| claude-skills | Python | 220+ Claude Code skills & agent plugins | https://github.com/alirezarezvani/claude-skills | 8,769 | ⭐⭐⭐⭐ | English |
+| awesome-agent-skills | null | Skills, tools, tutorials for AI coding agents | https://github.com/heilcheng/awesome-agent-skills | 3,579 | ⭐⭐⭐⭐ | English |
+| awesome-claude-code-toolkit | JavaScript | 135 agents, 35 skills, 150+ plugins | https://github.com/rohitg00/awesome-claude-code-toolkit | 1,004 | ⭐⭐⭐⭐ | English |
 
 ---
 
 ## MCP Servers
 
-| Name | Type | Description | URL | Stars | Security Score |
-|------|------|-------------|-----|-------|----------------|
+| Name | Type | Description | URL | Stars | Security Score | Language |
+|------|------|-------------|-----|-------|----------------|----------|
 | codebase-memory-mcp | C | High-performance code intelligence MCP server | https://github.com/DeusData/codebase-memory-mcp | 1,136 | ⭐⭐⭐⭐⭐ |
 | opencode-mcp | TypeScript | MCP server for OpenCode AI — 70 tools | https://github.com/AlaeddineMessadi/opencode-mcp | 20 | ⭐⭐⭐⭐ |
 | ogham-mcp | Python | Shared memory MCP server — persistent, searchable | https://github.com/ogham-mcp/ogham-mcp | 85 | ⭐⭐⭐⭐ |
@@ -103,13 +120,13 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Development Workflow
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
-| code-forge | Shell | Complete development workflow — TDD-driven implementation, debugging, code review, git worktree management | https://github.com/tercel/code-forge | 2 |
-| spec-forge | Shell | Generate industry-standard specifications — PRD, SRS, Technical Design, and Test Plan | https://github.com/tercel/spec-forge | 3 |
-| e2e-agent-skills | JavaScript | Skills focused on end-to-end automation for AI agents | https://github.com/jmr85/e2e-agent-skills | 5 |
-| cortex-ai-skills | Shell | Personal skills library for AI coding assistants | https://github.com/alexander-danilenko/cortex-ai-skills | 10 |
-| claude-code-showcase | JavaScript | Comprehensive Claude Code project configuration with hooks, skills, agents, commands | https://github.com/ChrisWiles/claude-code-showcase | 5,681 |
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
+| code-forge | Shell | Complete development workflow | https://github.com/tercel/code-forge | 2 | English |
+| spec-forge | Shell | Generate industry-standard specifications | https://github.com/tercel/spec-forge | 3 | English |
+| e2e-agent-skills | JavaScript | Skills for end-to-end automation | https://github.com/jmr85/e2e-agent-skills | 5 | English |
+| cortex-ai-skills | Shell | Personal skills library | https://github.com/alexander-danilenko/cortex-ai-skills | 10 | English |
+| claude-code-showcase | JavaScript | Comprehensive Claude Code configuration | https://github.com/ChrisWiles/claude-code-showcase | 5,681 | English |
 | claude-code-plugins-plus-skills | Python | 340 plugins + 1367 agent skills for Claude Code | https://github.com/jeremylongshore/claude-code-plugins-plus-skills | 1,814 |
 | claude-skills-marketplace | HTML | Claude Code Skills for software engineering workflows - Git automation, testing, and code review | https://github.com/mhattingpete/claude-skills-marketplace | 526 |
 | claude-code-config | JavaScript | Personal Claude Code configuration - rules, hooks, agents, skills, and commands | https://github.com/jarrodwatts/claude-code-config | 1,008 |
@@ -119,8 +136,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Research & Learning
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | Deep-Research-skills | Python | Structured deep research skill for Claude Code/Open Code/Codex with human-in-the-loop control | https://github.com/Weizhena/Deep-Research-skills | 279 |
 | Auto-claude-code-research-in-sleep | Python | Lightweight Markdown-only skills for autonomous ML research | https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep | 5,245 |
 | academic-research-skills | TeX | Academic Research Skills for Claude Code: research → write → review → revise → finalize | https://github.com/Imbad0202/academic-research-skills | 1,796 |
@@ -130,8 +147,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Memory & Context
 
-| Name | Type | Description | URL | Stars | Security Score |
-|------|------|-------------|-----|-------|----------------|
+| Name | Type | Description | URL | Stars | Security Score | Language |
+|------|------|-------------|-----|-------|----------------|----------|
 | aivectormemory | Python | Memory management via vector search | https://github.com/Edlineas/aivectormemory | 78 | ⭐⭐⭐⭐ |
 | contextual-commits | - | Capture WHY in git history | https://github.com/berserkdisruptors/contextual-commits | 121 | ⭐⭐⭐⭐ |
 | planning-with-files | Python | Manus-style persistent markdown planning | https://github.com/OthmanAdi/planning-with-files | 17,865 | ⭐⭐⭐⭐ |
@@ -141,57 +158,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Deployment & DevOps
 
-| Name | Type | Description | URL | Stars | Security Score |
-|------|------|-------------|-----|-------|----------------|
-| opencode-skills-autodeploy | TypeScript | Deploy to Coolify or Dokploy | https://github.com/okwn/opencode-skills-autodeploy | 0 | ⭐⭐⭐⭐ |
-| Coolify-MCP | TypeScript | Manage Coolify deployments | https://github.com/okwn/Coolify-MCP | 0 | ⭐⭐⭐⭐ |
-| lm-studio-mcp-server | TypeScript | Control LM Studio models | https://github.com/portertech/lm-studio-mcp-server | 2 | ⭐⭐⭐ |
-
----
-
-## Framework-Specific
-
-| Name | Type | Description | URL | Stars | Security Score |
-|------|------|-------------|-----|-------|----------------|
-| quarkus-skill | Shell | Quarkus reference docs | https://github.com/b6k-dev/quarkus-skill | 3 | ⭐⭐⭐⭐ |
-| marimo-opencode-skill | - | Interactive marimo notebooks | https://github.com/adrunkhuman/marimo-opencode-skill | 4 | ⭐⭐⭐ |
-| superPM | Shell | Product management | https://github.com/konglong87/superPM | 2 | ⭐⭐⭐ |
-| SwiftUI-Agent-Skill | - | SwiftUI agent skill | https://github.com/twostraws/SwiftUI-Agent-Skill | 3,316 | ⭐⭐⭐⭐ |
-| android-reverse-engineering-skill | Shell | Android reverse engineering | https://github.com/SimoneAvogadro/android-reverse-engineering-skill | 1,435 | ⭐⭐⭐⭐ |
-| pi-skills | JavaScript | Skills for pi coding agent | https://github.com/badlogic/pi-skills | 1,021 | ⭐⭐⭐ |
-| claude-code-game-studios | Shell | Game dev studio - 48 AI agents | https://github.com/Donchitos/Claude-Code-Game-Studios | 7,891 | ⭐⭐⭐⭐ |
-
----
-
-## Productivity & Automation
-
-| Name | Type | Description | URL | Stars | Security Score |
-|------|------|-------------|-----|-------|----------------|
-| mycrab-tunnel-skill | - | Autonomous Cloudflare Tunnel setup | https://github.com/isgudtek/mycrab-tunnel-skill | 2 | ⭐⭐⭐ |
-| dingtalk-to-ai-skill | TypeScript | Control AI CLI via DingTalk | https://github.com/dreamor/dingtalk-to-ai-skill | 0 | ⭐⭐⭐ |
-| ReinikeAI-Bot | PowerShell | Telegram extension for OpenCode | https://github.com/reinike96/ReinikeAI-Bot | 1 | ⭐⭐⭐ |
-| OSFTA | Shell | Find OpenCode plugins | https://github.com/itsrainingmani/OSFTA | 2 | ⭐⭐⭐ |
-| vsync | TypeScript | Sync MCP servers across agents | https://github.com/nicepkg/vsync | 32 | ⭐⭐⭐⭐ |
-| ask-user-questions-mcp | TypeScript | Human-in-the-loop MCP server | https://github.com/paulp-o/ask-user-questions-mcp | 87 | ⭐⭐⭐⭐ |
-| my-ai-tools | Shell | Configuration management | https://github.com/jellydn/my-ai-tools | 52 | ⭐⭐⭐⭐ |
-
----
-
-## Agent Orchestration
-
-| Name | Type | Description | URL | Stars | Security Score |
-|------|------|-------------|-----|-------|----------------|
-| agent-smith | - | Recursively breaks down tasks | https://github.com/cyijun/agent-smith | 8 | ⭐⭐⭐ |
-| supernova | Python | An AI Dev Team Orchestrator for coding agents skills | https://github.com/mrsknetwork/supernova | 2 |
-| agentpool | Python | Unified agent orchestration hub for multiple AI agents via YAML | https://github.com/phil65/agentpool | 123 |
-| superpowers-skills | TypeScript | Community-editable skills for Claude Code's superpowers plugin | https://github.com/obra/superpowers-skills | 594 |
-
----
-
-## Configurations & Templates
-
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | opencode-config | Python | Backup of OpenCode configurations including plugins, permissions and custom skills | https://github.com/RafaelQSantos-RQS/opencode-config | 0 |
 | awesome-opencode | JavaScript | 108 agents, 15 skills, smart model config, and interactive CLI for OpenCode | https://github.com/weisser-dev/awesome-opencode | 1 |
 | opencode-bootstrap | TypeScript | Production-ready bootstrap for a stronger global OpenCode setup | https://github.com/tikhomirov/opencode-bootstrap | 0 |
@@ -206,8 +174,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Language-Specific
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | python-expert-agent | JavaScript | Python Expert Agent tool for OpenCode | https://github.com/amrahman90/python-expert-agent | 3 |
 | claude-seo | Python | Universal SEO skill for Claude Code. 19 sub-skills, 12 subagents | https://github.com/AgriciDaniel/claude-seo | 3,776 |
 | playwright-skill | JavaScript | Claude Code Skill for browser automation with Playwright | https://github.com/lackeyjb/playwright-skill | 2,287 |
@@ -245,8 +213,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Marketing & SEO
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | marketingskills | JavaScript | CRO, copywriting, SEO, analytics, and growth engineering | https://github.com/coreyhaines31/marketingskills | 18,322 |
 | claude-seo | Python | Universal SEO skill. 19 sub-skills, 12 subagents | https://github.com/AgriciDaniel/claude-seo | 3,776 |
 | seo-geo-claude-skills | Python | 20 SEO & GEO skills for Claude Code, Cursor, Codex | https://github.com/aaron-he-zhu/seo-geo-claude-skills | 814 |
@@ -255,8 +223,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Product & Project Management
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | superPM | Shell | AI tools skills for product managers | https://github.com/konglong87/superPM | 2 |
 | Product-Manager-Skills | Python | Product Management skills framework for Claude Code | https://github.com/deanpeters/Product-Manager-Skills | 2,948 |
 | planning-with-files | Python | Manus-style persistent markdown planning | https://github.com/OthmanAdi/planning-with-files | 17,865 |
@@ -265,8 +233,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Database & Data
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | mcp-excel | Python | MCP server for AI agents to analyze Excel spreadsheets | https://github.com/jwadow/mcp-excel | 24 |
 | pdf-mcp | Python | MCP server for PDF processing with intelligent caching | https://github.com/jztan/pdf-mcp | 11 |
 
@@ -274,8 +242,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Git Workflow
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | dev-agent-skills | - | Claude Code skills plugin for Git, GitHub, and skill authoring workflows | https://github.com/fvadicamo/dev-agent-skills | 55 |
 | claude-git-pr-skill | - | Professional GitHub PR review skill for Claude Code with pending reviews | https://github.com/aidankinzett/claude-git-pr-skill | 15 |
 | skills | TypeScript | Claude Code skills for git workflows, GitHub automation, security audits | https://github.com/tartinerlabs/skills | 5 |
@@ -292,8 +260,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Cloud & DevOps
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | claude-ai-spring-boot | - | Claude Code template for Spring Boot | https://github.com/piomin/claude-ai-spring-boot | 965 |
 | learn-docker-and-k8s | Shell | Interactive AI-driven game to learn Docker, Linux, networking & Kubernetes | https://github.com/ericboy0224/learn-docker-and-k8s | 366 |
 | seakills | Python | AI agent skills for Sealos Cloud — deploy any project with one command | https://github.com/labring/seakills | 12 |
@@ -309,8 +277,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Testing & TDD
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | atdd | Shell | Acceptance Test Driven Development for Claude Code | https://github.com/swingerman/atdd | 87 |
 | muki-ai-plugins | Python | Disciplined development workflow for Claude Code — TDD, code review | https://github.com/mukiwu/muki-ai-plugins | 19 |
 | claude-conductor | JavaScript | Context-Driven Development framework for Claude Code | https://github.com/lackeyjb/claude-conductor | 12 |
@@ -330,8 +298,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Academic & Research
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | academic-research-skills | TeX | Academic Research Skills: research → write → review → revise → finalize | https://github.com/Imbad0202/academic-research-skills | 1,796 |
 | AI-Research-SKILLs | TeX | Comprehensive library of AI research and engineering skills | https://github.com/Orchestra-Research/AI-Research-SKILLs | 5,995 |
 | claudeblattman | HTML | Claude Code for academics — skills, agents, and setup guides | https://github.com/chrisblattman/claudeblattman | 248 |
@@ -341,8 +309,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Media & Creative
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | videocut-skills | JavaScript | Video editing Agent using Claude Code Skills | https://github.com/Ceeon/videocut-skills | 1,260 |
 | Generative-Media-Skills | Shell | Multi-modal Generative Media Skills for AI Agents | https://github.com/SamurAIGPT/Generative-Media-Skills | 2,982 |
 | excalidraw-diagram-skill | Python | Skill to generate beautiful Excalidraw diagrams | https://github.com/coleam00/excalidraw-diagram-skill | 1,721 |
@@ -351,8 +319,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Finance & Trading
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | claude-trading-skills | Python | Claude Code skills for equity investors and traders | https://github.com/tradermonty/claude-trading-skills | 586 |
 | travel-hacking-toolkit | JavaScript | AI-powered travel hacking with points, miles, and award flights | https://github.com/borski/travel-hacking-toolkit | 62 |
 
@@ -360,8 +328,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Automation & Scripts
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | claude-code-infrastructure-showcase | Shell | Examples of Claude Code infrastructure with skill auto-activation | https://github.com/diet103/claude-code-infrastructure-showcase | 9,398 |
 | claude-workflow-v2 | Python | Universal Claude Code workflow plugin with agents, skills, hooks, commands | https://github.com/CloudAI-X/claude-workflow-v2 | 1,310 |
 | agent-toolkit | Python | Curated collection of skills for AI coding agents | https://github.com/softaworks/agent-toolkit | 1,331 |
@@ -374,8 +342,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Plugins & Extensions
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | claude-plugins | TypeScript | Lightweight registry to discover, install, and manage Claude plugins | https://github.com/Kamalnrf/claude-plugins | 489 |
 | skill-builder | - | Claude Code Agent Skills Builder | https://github.com/metaskills/skill-builder | 93 |
 | agent-skill-creator | Python | Turn any workflow into reusable AI agent skills | https://github.com/FrancyJGLisboa/agent-skill-creator | 639 |
@@ -390,8 +358,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Mobile Development
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | mobile-app-design | Shell | Comprehensive mobile app UI/UX design skill - iOS, Android, React Native | https://github.com/awesome-skills/mobile-app-design | 13 |
 | ms-claude-mobile-skills | - | Custom Claude Code skills for React Native / Expo | https://github.com/nperez-ms/ms-claude-mobile-skills | 0 |
 | skills | - | Claude Code skill for building production-ready Expo React Native apps | https://github.com/emrahyurttutan/skills | 1 |
@@ -407,16 +375,16 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Database & ORM
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | postgres-setup-skill | - | PostgreSQL setup skill with schema.sql, connection pooling | https://github.com/pixelsock/postgres-setup-skill | 0 |
 
 ---
 
 ## UI/UX Design
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | ui-marketplace | - | Complete UI/UX/CSS Marketplace for Claude Code - 29 specialized agents | https://github.com/EhssanAtassi/ui-marketplace | 3 |
 | ux-design-skill | HTML | Two skills for building kind, smart web interfaces | https://github.com/abr011/ux-design-skill | 0 |
 | kv-skills | HTML | Opinionated design skills for Claude Code | https://github.com/karthikv792/kv-skills | 0 |
@@ -426,8 +394,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## API Development
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | swagger-gen-skill | - | Auto-generate Swagger/OpenAPI 3.0 docs from source code | https://github.com/showkkd133/swagger-gen-skill | 0 |
 | frontend-openapi-skills | JavaScript | Generate type-safe TypeScript models and API clients from OpenAPI | https://github.com/HaibaraAiAPTX/frontend-openapi-skills | 0 |
 
@@ -435,8 +403,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Blockchain & Web3
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | spoon-awesome-skill | Python | 57 Python scripts across 19 skills for SpoonOS and Web3 integrations | https://github.com/XSpoonAi/spoon-awesome-skill | 14 |
 | blockchain-skills | - | Blockchain skills for Claude Code, OpenCode, Codex, Cursor | https://github.com/quiknode-labs/blockchain-skills | 11 |
 | arkham-intelligence-claude-skill | - | Integrate Arkham Intelligence API for on-chain analytics | https://github.com/Vyntral/arkham-intelligence-claude-skill | 5 |
@@ -446,8 +414,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Documentation
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | pg-aiguide | Python | MCP server and Claude plugin for Postgres skills and documentation | https://github.com/timescale/pg-aiguide | 1,668 |
 | document-specialist-skill | - | AI-powered software documentation automation | https://github.com/SpillwaveSolutions/document-specialist-skill | 16 |
 | doxy | TypeScript | Transform any documentation site into Claude Code skills | https://github.com/davidosemwegie/doxy | 6 |
@@ -503,8 +471,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## CLI & Commands
 
-| Name | Type | Description | URL | Stars |
-|------|------|-------------|-----|-------|
+| Name | Type | Description | URL | Stars | Language |
+|------|------|-------------|-----|-------|----------|
 | claude-skills | Shell | Reusable Claude Code slash command skills | https://github.com/NoahWorkman/claude-skills | 2 |
 | claude-code-cheat-sheet | - | Keyboard shortcuts, slash commands, CLI flags reference | https://github.com/wilwaldon/claude-code-cheat-sheet | 6 |
 | claude-skills | - | Custom slash commands for Claude Code CLI | https://github.com/0xSector/claude-skills | 0 |
@@ -523,8 +491,8 @@ Or manually creating the SKILL.md file in the appropriate location.
 
 ## Security Audit & Review
 
-| Name | Type | Description | URL | Stars | Security Score |
-|------|------|-------------|-----|-------|----------------|
+| Name | Type | Description | URL | Stars | Security Score | Language |
+|------|------|-------------|-----|-------|----------------|----------|
 | skills | Python | Trail of Bits skills for security research, vulnerability detection, and audit workflows | https://github.com/trailofbits/skills | 4,225 | ⭐⭐⭐⭐⭐ |
 | claude-skill-security-auditor | TypeScript | Structured security audits with actionable remediation plans | https://github.com/wrsmith108/claude-skill-security-auditor | 9 | ⭐⭐⭐⭐ |
 | security-audit-skill | Shell | PHP security audits - OWASP patterns, vulnerability detection | https://github.com/netresearch/security-audit-skill | 8 | ⭐⭐⭐⭐ |
