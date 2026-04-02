@@ -53,6 +53,9 @@ Or manually creating the SKILL.md file in the appropriate location.
 28. [API Development](#api-development)
 29. [Blockchain & Web3](#blockchain--web3)
 30. [Documentation](#documentation)
+31. [Code Review & PR](#code-review--pr)
+32. [Architecture & Design](#architecture--design)
+33. [CLI & Commands](#cli--commands)
 
 ---
 
@@ -455,6 +458,64 @@ Or manually creating the SKILL.md file in the appropriate location.
 | openclaw-skill | Shell | Complete OpenClaw documentation as a skill - 333 pages | https://github.com/brabaflow/openclaw-skill | 7 |
 | cli-code-skills | - | Production-ready skills — audit, design docs, generate docs | https://github.com/Destynova2/cli-code-skills | 2 |
 | idea-to-docs | - | Convert PRDs into production-grade technical documentation | https://github.com/CloveSVG/idea-to-docs | 3 |
+
+---
+
+## Code Review & PR
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| pragmatic-clean-code-reviewer | Python | Code reviews based on Clean Code, Clean Architecture principles | https://github.com/Zhen-Bo/pragmatic-clean-code-reviewer | 128 |
+| claude-git-pr-skill | - | Professional GitHub PR review skill with pending reviews | https://github.com/aidankinzett/claude-git-pr-skill | 15 |
+| 2030ai-pullrequest-pipeline-skill-template | - | Automated PR with code review from Codex | https://github.com/2030ai/2030ai-pullrequest-pipeline-skill-template | 11 |
+| claude-skills-vault | Python | High impact skills for code reviews, TDD cycles, PR management | https://github.com/georgekhananaev/claude-skills-vault | 18 |
+| pr-reviewer-skill | Python | Comprehensive GitHub PR code review skill | https://github.com/SpillwaveSolutions/pr-reviewer-skill | 10 |
+| devon-claude-skills | Shell | Skills marketplace: PR review automation | https://github.com/devonjones/devon-claude-skills | 6 |
+| claude-code-pr-reviewer | Shell | GitHub Action with integrated skill for PR reviews | https://github.com/altinukshini/claude-code-pr-reviewer | 4 |
+| git-conventions | - | Consistent git commit, PR, and review conventions | https://github.com/chanmuzi/git-conventions | 6 |
+| claude-code-workflow | - | Professional PR workflow — branch protection, AI code review | https://github.com/tmoody1973/claude-code-workflow | 3 |
+| dstl-code-review | Python | CLI tool that distills GitHub PR review comments into skills | https://github.com/AmitPoonia/dstl-code-review | 3 |
+| claude-code-prompt-patterns | Shell | Prompt engineering research corpus for analyzing prompt patterns | https://github.com/Saxxon-Usagi/claude-code-prompt-patterns | 3 |
+| project-coding-companion-skill | - | Coaches you to write better coding prompts | https://github.com/rgranet/project-coding-companion-skill | 7 |
+| claude-pr-reviewer-skill | Python | Optimally assigns PR reviewers using energy-based optimization | https://github.com/m1halo/claude-pr-reviewer-skill | 2 |
+| mine-best-practices | Python | Extracts engineering best practices from PR review history | https://github.com/valon-technologies/mine-best-practices | 3 |
+
+---
+
+## Architecture & Design
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| arkhe-claude-plugins | Python | 109 specialized components — 22 agents, 32 commands, 55 skills | https://github.com/joaquimscosta/arkhe-claude-plugins | 9 |
+| agent-architecture-skills | Shell | Reusable architecture skills for Codex and Claude Code | https://github.com/Alan-512/agent-architecture-skills | 0 |
+| ai-craftsman-superpowers | Shell | Multi-pack architecture with DDD patterns, Clean Architecture | https://github.com/BULDEE/ai-craftsman-superpowers | 5 |
+| arc-skill | Python | Scaffolding production-ready React Native projects | https://github.com/art9mid/arc-skill | 7 |
+| dev-standards | Shell | Design system, code architecture, AI-friendly development | https://github.com/jonathanlarav/dev-standards | 0 |
+| system-craft | Shell | Consistent design systems and component libraries | https://github.com/olzn/system-craft | 0 |
+| skeleton-skills | - | Full-stack Laravel + Next.js modular monolith workflow | https://github.com/JuanGuillenMartinez/skeleton-skills | 0 |
+| rovi-skills | - | Full-stack apps, architecture, frameworks, design system | https://github.com/thewizardshell/rovi-skills | 0 |
+| nexus-architect | Python | 36 skills across 9 categories for legacy refactoring | https://github.com/wfukatsu/nexus-architect | 0 |
+| flutter-ui-pro-skill | - | Professional Flutter UIs with design system, GetX architecture | https://github.com/ibrahimmaher2503-source/flutter-ui-pro-skill | 0 |
+
+---
+
+## CLI & Commands
+
+| Name | Type | Description | URL | Stars |
+|------|------|-------------|-----|-------|
+| claude-skills | Shell | Reusable Claude Code slash command skills | https://github.com/NoahWorkman/claude-skills | 2 |
+| claude-code-cheat-sheet | - | Keyboard shortcuts, slash commands, CLI flags reference | https://github.com/wilwaldon/claude-code-cheat-sheet | 6 |
+| claude-skills | - | Custom slash commands for Claude Code CLI | https://github.com/0xSector/claude-skills | 0 |
+| claude-config | Shell | Custom skills (slash commands) for Claude Code CLI | https://github.com/asyncawaiter/claude-config | 0 |
+| claude-skills | - | Shared Claude Code CLI skills — reusable slash commands | https://github.com/unattachedgray/claude-skills | 0 |
+| claude-workbench | TypeScript | GUI management tool for Claude Code CLI | https://github.com/Norman-else/claude-workbench | 7 |
+| gws-claude-setup | Shell | Google Workspace CLI skill and slash commands | https://github.com/kenjudy/gws-claude-setup | 0 |
+| claude-planflow-skills | JavaScript | Interactive Plan Mode + Speckit conversion workflow | https://github.com/devload/claude-planflow-skills | 0 |
+| claude-skills | JavaScript | Reusable slash-command workflows for complex tasks | https://github.com/npow/claude-skills | 0 |
+| claude-kit | TypeScript | Powertools for Claude Code — agents, slash commands, skills | https://github.com/ruchernchong/claude-kit | 0 |
+| claude-marketing | JavaScript | Marketing co-founder — 29 skills, 51 CLI tools, 7 slash commands | https://github.com/whyujjwal/claude-marketing | 0 |
+| agent-add | TypeScript | Install MCP, Skills, slash commands, sub-agents | https://github.com/pea3nut/agent-add | 0 |
+| pm-operating-system | Python | Opinionated workflow system for product managers | https://github.com/mshadmanrahman/pm-operating-system | 0 |
 
 ---
 
