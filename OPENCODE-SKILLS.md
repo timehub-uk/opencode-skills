@@ -56,6 +56,7 @@ Or manually creating the SKILL.md file in the appropriate location.
 31. [Code Review & PR](#code-review--pr)
 32. [Architecture & Design](#architecture--design)
 33. [CLI & Commands](#cli--commands)
+34. [Security Audit & Review](#security-audit--review)
 
 ---
 
@@ -516,6 +517,260 @@ Or manually creating the SKILL.md file in the appropriate location.
 | claude-marketing | JavaScript | Marketing co-founder — 29 skills, 51 CLI tools, 7 slash commands | https://github.com/whyujjwal/claude-marketing | 0 |
 | agent-add | TypeScript | Install MCP, Skills, slash commands, sub-agents | https://github.com/pea3nut/agent-add | 0 |
 | pm-operating-system | Python | Opinionated workflow system for product managers | https://github.com/mshadmanrahman/pm-operating-system | 0 |
+
+---
+
+## Security Audit & Review
+
+| Name | Type | Description | URL | Stars | Security Score |
+|------|------|-------------|-----|-------|----------------|
+| skills | Python | Trail of Bits skills for security research, vulnerability detection, and audit workflows | https://github.com/trailofbits/skills | 4,225 | ⭐⭐⭐⭐⭐ |
+| claude-skill-security-auditor | TypeScript | Structured security audits with actionable remediation plans | https://github.com/wrsmith108/claude-skill-security-auditor | 9 | ⭐⭐⭐⭐ |
+| security-audit-skill | Shell | PHP security audits - OWASP patterns, vulnerability detection | https://github.com/netresearch/security-audit-skill | 8 | ⭐⭐⭐⭐ |
+| claude-security-skills | Python | Adversarial-grade security audits with function analysis | https://github.com/Yashvendra/claude-security-skills | 2 | ⭐⭐⭐ |
+| code-security-skills-set | - | Security-focused skills, plugins, and tools for AI agents | https://github.com/jiashi19/code-security-skills-set | 2 | ⭐⭐⭐ |
+| redteam-skills | Shell | Automated security auditing with OWASP Top 10 | https://github.com/morodomi/redteam-skills | 2 | ⭐⭐⭐ |
+| security-audit | Python | Universal security scanning - hardcoded secrets, API keys, 44 patterns | https://github.com/YangKuoshih/security-audit | 3 | ⭐⭐⭐⭐ |
+| skill-security-auditor | Shell | Analyzes skills and MCP servers for malicious patterns | https://github.com/burakseyman/skill-security-auditor | 1 | ⭐⭐⭐ |
+| loripelu.claude-security-audit-skill | - | Scan for hardcoded secrets, vulnerabilities, license issues | https://github.com/loripelu10-aiapp/loripelu.claude-security-audit-skill | 0 | ⭐⭐⭐ |
+| Claude-Hook-Security-Scanner | Python | Detects hidden vulnerabilities in hooks before execution | https://github.com/Natfii/Claude-Hook-Security-Scanner | 0 | ⭐⭐⭐⭐ |
+| skill-auditor | JavaScript | Security scanner for skills - vulnerabilities, prompt injection | https://github.com/RubenAQuispe/skill-auditor | 0 | ⭐⭐⭐⭐ |
+| security-audit-skill | - | Security auditor for backend services and APIs | https://github.com/edmdemonz9/security-audit-skill | 0 | ⭐⭐⭐ |
+| security-review-skill | - | Auto-audits for OWASP Top 10 before delivery | https://github.com/thisidnotfound/security-review-skill | 0 | ⭐⭐⭐⭐ |
+| ghsa-skill-builder | - | Convert GitHub/HackerOne security reports into skills | https://github.com/ghaniyanawaz/ghsa-skill-builder | 0 | ⭐⭐⭐ |
+| vibe-security-enhanced | Batchfile | Detects and prevents security vulnerabilities in AI-generated code | https://github.com/Olamzkid2005/vibe-security-enhanced | 0 | ⭐⭐⭐ |
+| ai-security-assessment-skill | - | Analyzes codebases following OWASP Top 10, CWE Top 25 | https://github.com/gusocegodk/ai-security-assessment-skill | 0 | ⭐⭐⭐⭐ |
+| vibe-security-check | - | 31 vulnerability checks across Secrets, Access, User Input, AI Surface | https://github.com/Sensei01/vibe-security-check | 1 | ⭐⭐⭐⭐ |
+| hackprobe | Shell | Black-box security audit - orchestrates 25+ security tools | https://github.com/nuromirzak/hackprobe | 1 | ⭐⭐⭐⭐⭐ |
+| shield-harness | JavaScript | Security-first AI agent harness - loopback-only, origin validation | https://github.com/Sora-bluesky/shield-harness | 0 | ⭐⭐⭐⭐⭐ |
+
+---
+
+### Security Score Guide
+
+| Score | Rating | Description |
+|-------|--------|-------------|
+| ⭐⭐⭐⭐⭐ | Excellent | Comprehensive security coverage, industry-standard patterns, proven in production |
+| ⭐⭐⭐⭐ | Good | Solid security features, covers major vulnerabilities, actively maintained |
+| ⭐⭐⭐ | Average | Basic security checks, may have gaps, limited community support |
+| ⭐⭐ | Poor | Limited security coverage, potential issues |
+| ⭐ | Bad | Minimal or no security features |
+
+---
+
+### Security Audit Brief - Top Skills Analysis
+
+#### 1. trailofbits/skills (⭐⭐⭐⭐⭐)
+**Organization:** Trail of Bits  
+**Stars:** 4,225  
+**License:** CC-BY-SA-4.0  
+
+**Overview:**
+The gold standard for security skills. Created by renowned cybersecurity firm Trail of Bits, this plugin marketplace provides 30+ specialized security skills.
+
+**Security Coverage:**
+- Smart Contract Security (6 blockchains)
+- Code Auditing (15+ skills)
+- Malware Analysis (YARA rules)
+- Verification (constant-time, mutation testing, property-based testing)
+- Mobile Security
+- Supply Chain Risk Auditing
+
+**Strengths:**
+- Industry-leading security expertise
+- 371 forks, 4,225 stars - heavily tested
+- Covers CodeQL, Semgrep, SARIF
+- Real bugs discovered using these skills
+- Regular updates from professional security researchers
+
+**Weaknesses:**
+- Steeper learning curve
+- Some skills require external tooling
+- Python/Shell-heavy - less accessible for some users
+
+**Recommendation:** ⭐⭐⭐⭐⭐ - Essential for any security-focused workflow
+
+---
+
+#### 2. hackprobe (⭐⭐⭐⭐⭐)
+**Stars:** 1  
+
+**Overview:**
+AI-assisted black-box security audit skill that orchestrates 25+ security tools with LLM reasoning to find business logic vulnerabilities.
+
+**Security Coverage:**
+- Dynamic analysis
+- Business logic vulnerability detection
+- Multi-tool orchestration
+
+**Strengths:**
+- Combines multiple security tools
+- LLM-powered reasoning for finding logic flaws
+- Beyond typical scanner findings
+
+**Weaknesses:**
+- Newer, less tested
+- Limited community feedback
+
+**Recommendation:** ⭐⭐⭐⭐⭐ - Excellent for comprehensive audits
+
+---
+
+#### 3. security-audit (⭐⭐⭐⭐)
+**Stars:** 3  
+
+**Overview:**
+Universal security scanning skill for AI agents - finds hardcoded secrets, API keys, and vulnerabilities.
+
+**Security Coverage:**
+- 44 pattern detection
+- GitLeaks integration
+- OWASP Top 10 mapping
+- Multiple report formats (Markdown/SARIF/JSON)
+
+**Strengths:**
+- Cross-platform (Claude Code, Cursor, Windsurf)
+- Multiple output formats
+- Good pattern coverage
+
+**Weaknesses:**
+- Newer project
+- Less community validation
+
+**Recommendation:** ⭐⭐⭐⭐ - Solid for secret scanning
+
+---
+
+#### 4. Claude-Hook-Security-Scanner (⭐⭐⭐⭐)
+**Stars:** 0  
+
+**Overview:**
+Plugin for Claude Code to detect hidden vulnerabilities in hooks before they execute.
+
+**Security Coverage:**
+- Hook vulnerability detection
+- Pre-execution analysis
+
+**Strengths:**
+- Unique focus on hook security
+- Prevents malicious hook execution
+
+**Weaknesses:**
+- Very new, no stars
+- Limited documentation
+
+**Recommendation:** ⭐⭐⭐⭐ - Important for hook safety
+
+---
+
+#### 5. skill-auditor (⭐⭐⭐⭐)
+**Stars:** 0  
+
+**Overview:**
+Security scanner for Claude Code skills. Scans for vulnerabilities, prompt injection, data exfiltration, and obfuscation.
+
+**Security Coverage:**
+- Prompt injection detection
+- Data exfiltration prevention
+- Obfuscation detection
+
+**Strengths:**
+- Addresses AI-specific threats
+- Skill-level security audit
+
+**Weaknesses:**
+- New project
+- Limited adoption
+
+**Recommendation:** ⭐⭐⭐⭐ - Critical for skill safety
+
+---
+
+#### 6. claude-skill-security-auditor (⭐⭐⭐⭐)
+**Stars:** 9  
+
+**Overview:**
+Structured security audits with actionable remediation plans.
+
+**Security Coverage:**
+- General security auditing
+- Remediation guidance
+
+**Strengths:**
+- Provides remediation steps
+- Active development
+
+**Weaknesses:**
+- General-purpose, not deep
+
+**Recommendation:** ⭐⭐⭐⭐ - Good for basic audits
+
+---
+
+#### 7. vibe-security-check (⭐⭐⭐⭐)
+**Stars:** 1  
+
+**Overview:**
+31 vulnerability checks across Secrets & Config, Access & API, User Input, and AI & Agent Surface.
+
+**Security Coverage:**
+- 31 specific checks
+- AI-generated code focus
+- Covers 4 major areas
+
+**Strengths:**
+- Comprehensive check count
+- AI-specific vulnerabilities
+
+**Weaknesses:**
+- New, limited testing
+
+**Recommendation:** ⭐⭐⭐⭐ - Good for AI-generated code
+
+---
+
+#### 8. netresearch/security-audit-skill (⭐⭐⭐⭐)
+**Stars:** 8  
+
+**Overview:**
+PHP security audits - OWASP patterns, vulnerability detection.
+
+**Security Coverage:**
+- PHP-specific
+- OWASP Top 10
+- Vulnerability detection
+
+**Strengths:**
+- PHP-focused expertise
+- Active maintenance
+
+**Weaknesses:**
+- Language-specific
+
+**Recommendation:** ⭐⭐⭐⭐ - Essential for PHP projects
+
+---
+
+#### 9. shield-harness (⭐⭐⭐⭐⭐)
+**Stars:** 0  
+
+**Overview:**
+Security-first AI agent harness with loopback-only gateway, origin-validated WebSocket, context-isolated channels.
+
+**Security Coverage:**
+- Network isolation
+- WebSocket validation
+- Context isolation
+
+**Strengths:**
+- Solves core AI agent vulnerabilities by design
+- Multiple security layers
+
+**Weaknesses:**
+- New project
+- No community testing
+
+**Recommendation:** ⭐⭐⭐⭐⭐ - Architecture-level security
 
 ---
 
