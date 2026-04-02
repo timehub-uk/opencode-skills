@@ -2,39 +2,7 @@
 
 > A comprehensive list of open-source skills for OpenCode AI coding assistant
 
-## Language Support / 语言支持 / Support multi-langue
-
-Skills are available in multiple languages. The **Language** column indicates:
-- **English** - Primary documentation in English
-- **Chinese** - 中文 - Primary documentation in Chinese
-- **Multi** - Supports multiple languages
-- **null** - Documentation language not specified
-
-## Supported Languages / 支持的语言:
-| Code | Language |
-|------|-----------|
-| English | English |
-| Chinese | 中文 (Chinese) |
-| Japanese | 日本語 (Japanese) |
-| Multi | Multiple languages |
-| null | Not specified |
-
-## What are OpenCode Skills?
-
-OpenCode skills are reusable behavior definitions that extend OpenCode's capabilities. They are defined via `SKILL.md` files placed in specific locations:
-- Project: `.opencode/skills/<name>/SKILL.md`
-- Global: `~/.config/opencode/skills/<name>/SKILL.md`
-
-## Installation
-
-Most skills can be installed by cloning the repository:
-
-```bash
-# Clone to global skills directory
-git clone <repo-url> ~/.config/opencode/skills/<skill-name>
-```
-
-Or manually creating the SKILL.md file in the appropriate location.
+**This list is maintained by timehub-uk only. No external contributions accepted.**
 
 ---
 
@@ -1029,3 +997,7 @@ Use this when...
 ---
 
 *Last Updated: 2026-04-02*
+
+---
+
+**No Contributions Accepted** - This list is maintained privately. Do not submit PRs.
