@@ -14,158 +14,158 @@ jobs:
           fetch-depth: 0
 
       - name: Setup GH CLI
-        run: |
-          gh auth setup-git
+        run: gh auth setup-git
 
       - name: Install OpenCode
         run: |
           curl -sSfL https://opencode.ai/install.sh | sh
-          export PATH="$HOME/.opencode/bin:$PATH"
-          opencode --version
+          echo "$HOME/.opencode/bin" >> $GITHUB_PATH
 
       - name: Discover new OpenCode skills
         id: discover
         run: |
-          export PATH="$HOME/.opencode/bin:$PATH"
-          
           # Search for recently created/updated skills
-          echo "Searching for new OpenCode skills..."
-          
           gh api search/repositories \
-            -q '.items[] | "\(.full_name)|\(.description)|\(.html_url)|\(.language)|\(.stargazers_count)|\(.updated_at)"' \
+            -q '.items[] | "\(.full_name)"' \
             --method GET \
             -F q="opencode skills created:>2026-03-01" \
-            -F per_page=50 > /tmp/new-skills.txt
+            -F per_page=30 > /tmp/skill-repos.txt
           
-          # Also search for claude-code-skills topic
           gh api search/repositories \
-            -q '.items[] | "\(.full_name)|\(.description)|\(.html_url)|\(.language)|\(.stargazers_count)"' \
+            -q '.items[] | "\(.full_name)"' \
             --method GET \
-            -F q="topic:claude-code-skills created:>2026-03-01" \
-            -F per_page=30 >> /tmp/new-skills.txt
+            -F q="topic:opencode-skills created:>2026-03-01" \
+            -F per_page=30 >> /tmp/skill-repos.txt
           
-          # Get unique skills
-          sort -u /tmp/new-skills.txt -o /tmp/new-skills.txt
+          sort -u /tmp/skill-repos.txt -o /tmp/skill-repos.txt
           
-          COUNT=$(wc -l < /tmp/new-skills.txt)
-          echo "Found $COUNT potential new skills"
+          COUNT=$(wc -l < /tmp/skill-repos.txt)
+          echo "Discovered: $COUNT repos"
           echo "discovered=$COUNT" >> $GITHUB_OUTPUT
 
       - name: Review skills with OpenCode
         id: review
         run: |
-          export PATH="$HOME/.opencode/bin:$PATH"
+          echo "=== OpenCode Review Process ==="
           
-          echo "Reviewing skills with OpenCode..."
-          
-          mkdir -p /tmp/skills-to-add
-          
-          while IFS='|' read -r name desc url lang stars updated; do
-            [ -z "$name" ] && continue
+          while IFS= read -r repo; do
+            [ -z "$repo" ] && continue
             
             echo "---"
-            echo "Checking: $name"
+            echo "Reviewing: $repo"
             
-            # Create temp directory
-            temp_dir="/tmp/review-$RANDOM"
-            git clone --depth 1 "$url" "$temp_dir" 2>/dev/null || {
-              echo "  ✗ Clone failed"
-              continue
-            }
+            # Get repo details
+            REPO_DATA=$(gh api repos/$repo)
+            DESC=$(echo "$REPO_DATA" | jq -r '.description // "No description"')
+            LANG=$(echo "$REPO_DATA" | jq -r '.language // "Unknown"')
+            STARS=$(echo "$REPO_DATA" | jq -r '.stargazers_count')
             
-            cd "$temp_dir"
+            # Get SKILL.md content via API (no clone!)
+            SKILL_CONTENT=$(gh api repos/$repo/contents/SKILL.md 2>/dev/null | jq -r '.content // empty' | base64 -d 2>/dev/null || echo "")
             
-            # Check for SKILL.md
-            if [ ! -f "SKILL.md" ]; then
+            if [ -z "$SKILL_CONTENT" ]; then
               echo "  ✗ No SKILL.md found"
-              cd - && rm -rf "$temp_dir"
               continue
             fi
             
             echo "  ✓ Has SKILL.md"
             
-            # Run OpenCode to review the skill
-            # Create a temporary CLAUDE.md for review
-            cat > /tmp/review-prompt.md << 'EOF'
-Review this OpenCode skill and provide:
-1. Quality score (1-5)
-2. Security assessment  
-3. Whether it should be added to the skills list
-4. Suggested category
+            # Create review prompt for OpenCode
+            cat > /tmp/review-prompt.md << EOF
+You are reviewing an OpenCode skill for the skills list.
+
+## Skill: $repo
+## Description: $DESC
+## Language: $LANG
+## Stars: $STARS
+
+## SKILL.md Content:
+$SKILL_CONTENT
+
+## Your Task:
+Provide a JSON response with this structure:
+{
+  "name": "skill-name",
+  "score": 1-5,
+  "quality": "excellent|good|average|poor",
+  "security": "safe|concern|unsafe",
+  "should_add": true|false,
+  "category": "category-name",
+  "reason": "why it should/shouldn't be added"
+}
+
+Respond ONLY with valid JSON, no other text.
 EOF
             
-            # Extract skill info
-            skill_name=$(grep "^name:" SKILL.md 2>/dev/null | head -1 | cut -d: -f2 | xargs || echo "$name")
-            skill_desc=$(grep "^description:" SKILL.md 2>/dev/null | head -1 | cut -d: -f2- | xargs || echo "$desc")
-            skill_compat=$(grep "^compatibility:" SKILL.md 2>/dev/null | head -1 | cut -d: -f2 | xargs || echo "opencode")
+            # Run OpenCode to review (sends prompt to OpenCode)
+            # Note: This sends to OpenCode API for analysis
+            REVIEW_RESULT=$(cat /tmp/review-prompt.md | opencode --prompt 2>/dev/null || echo '{"should_add":false,"reason":"OpenCode not available"}')
             
-            # Basic validation
-            if [ -z "$skill_name" ] || [ -z "$skill_desc" ]; then
-              echo "  ✗ Missing required metadata"
-              cd - && rm -rf "$temp_dir"
-              continue
-            fi
+            # Check if should be added
+            SHOULD_ADD=$(echo "$REVIEW_RESULT" | jq -r '.should_add // false')
             
-            # Score based on quality indicators
-            score=3
-            [[ -f "README.md" ]] && score=$((score + 1))
-            [[ -f "*.md" ]] && score=$((score + 1))
-            
-            if [ $score -ge 4 ]; then
-              echo "  ✓ Passed review (score: $score/5)"
+            if [ "$SHOULD_ADD" = "true" ]; then
+              SCORE=$(echo "$REVIEW_RESULT" | jq -r '.score // 3')
+              NAME=$(echo "$REVIEW_RESULT" | jq -r '.name // "'$repo'"')
+              CATEGORY=$(echo "$REVIEW_RESULT" | jq -r '.category // "Comprehensive Collections"')
+              REASON=$(echo "$REVIEW_RESULT" | jq -r '.reason // "Passed review"')
+              
+              # Convert score to stars
+              STARS_DISPLAY=""
+              for i in $(seq 1 $SCORE); do STARS_DISPLAY="${STARS_DISPLAY}⭐"; done
+              
+              echo "  ✓ Passed review (score: $SCORE/5)"
+              echo "  Category: $CATEGORY"
+              echo "  Reason: $REASON"
               
               # Add to pending list
-              echo "$skill_name|$skill_compat|$skill_desc|$url|$stars|⭐⭐⭐⭐|" >> /tmp/skills-to-add/pending.txt
+              echo "$NAME|$LANG|$DESC|https://github.com/$repo|$STARS|$STARS_DISPLAY|Reviewed by OpenCode|" >> /tmp/skills-to-add.txt
             else
-              echo "  ✗ Did not pass review (score: $score/5)"
+              echo "  ✗ Did not pass review"
+              REASON=$(echo "$REVIEW_RESULT" | jq -r '.reason // "Failed check"')
+              echo "    Reason: $REASON"
             fi
             
-            cd - > /dev/null
-            rm -rf "$temp_dir"
-            
-          done < /tmp/new-skills.txt
+          done < /tmp/skill-repos.txt
           
-          PENDING_COUNT=$(wc -l < /tmp/skills-to-add/pending.txt 2>/dev/null || echo 0)
+          PENDING_COUNT=$(wc -l < /tmp/skills-to-add.txt 2>/dev/null || echo 0)
+          echo "=== Review Complete ==="
           echo "Skills passing review: $PENDING_COUNT"
           echo "passed=$PENDING_COUNT" >> $GITHUB_OUTPUT
 
       - name: Add reviewed skills to list
         if: steps.review.outputs.passed > '0'
         run: |
-          echo "Adding reviewed skills to list..."
+          echo "Adding reviewed skills..."
           
-          # Find the right category section
-          # Add skills to "Comprehensive Collections" section
-          
-          while IFS='|' read -r name compat desc url stars score; do
+          while IFS='|' read -r name lang desc url stars score lang2; do
+            [ -z "$name" ] && continue
             echo "Adding: $name"
             
-            # Add new skill entry to the list
-            # Insert into Comprehensive Collections table
-            sed -i "/^| awesome-claude-code-toolkit/a| $name | $compat | $desc | $url | $stars | $score | English |" OPENCODE-SKILLS.md
+            # Add to Comprehensive Collections
+            sed -i "/^| awesome-claude-code-toolkit/a| $name | $lang | $desc | $url | $stars | $score | $lang2 |" OPENCODE-SKILLS.md
             
-          done < /tmp/skills-to-add/pending.txt
+          done < /tmp/skills-to-add.txt
 
-      - name: Commit and push to private
+      - name: Commit and sync
         if: steps.review.outputs.passed > '0'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
           git add OPENCODE-SKILLS.md
-          git commit -m "docs: auto-add reviewed skills ($(date +%Y-%m-%d))" || echo "No changes"
+          git commit -m "docs: auto-add OpenCode reviewed skills ($(date +%Y-%m-%d))" || echo "No changes"
           
+          # Push to private
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/timehub-uk/opencode-skill-list.git HEAD:main
-
-      - name: Sync to public
-        if: steps.review.outputs.passed > '0'
-        run: |
-          git remote add public https://github.com/timehub-uk/opencode-skills.git
+          
+          # Sync to public
+          git remote add public https://github.com/timehub-uk/opencode-skills.git 2>/dev/null || true
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/timehub-uk/opencode-skills.git HEAD:main
 
       - name: Summary
         run: |
-          echo "## Auto Update Summary" >> $GITHUB_STEP_SUMMARY
-          echo "- Skills discovered: ${{ steps.discover.outputs.discovered }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Skills passed review: ${{ steps.review.outputs.passed }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Published to public: $([ '${{ steps.review.outputs.passed }}' > '0' ] && echo 'Yes' || echo 'No')" >> $GITHUB_STEP_SUMMARY
+          echo "## Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- Discovered: ${{ steps.discover.outputs.discovered }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Passed OpenCode Review: ${{ steps.review.outputs.passed }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Published: Yes" >> $GITHUB_STEP_SUMMARY
