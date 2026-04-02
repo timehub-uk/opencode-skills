@@ -24,7 +24,6 @@ jobs:
       - name: Discover new OpenCode skills
         id: discover
         run: |
-          # Search for recently created/updated skills
           gh api search/repositories \
             -q '.items[] | "\(.full_name)"' \
             --method GET \
@@ -54,13 +53,11 @@ jobs:
             echo "---"
             echo "Reviewing: $repo"
             
-            # Get repo details
             REPO_DATA=$(gh api repos/$repo)
             DESC=$(echo "$REPO_DATA" | jq -r '.description // "No description"')
             LANG=$(echo "$REPO_DATA" | jq -r '.language // "Unknown"')
             STARS=$(echo "$REPO_DATA" | jq -r '.stargazers_count')
             
-            # Get SKILL.md content via API (no clone!)
             SKILL_CONTENT=$(gh api repos/$repo/contents/SKILL.md 2>/dev/null | jq -r '.content // empty' | base64 -d 2>/dev/null || echo "")
             
             if [ -z "$SKILL_CONTENT" ]; then
@@ -70,66 +67,25 @@ jobs:
             
             echo "  ✓ Has SKILL.md"
             
-            # Create review prompt for OpenCode
-            cat > /tmp/review-prompt.md << EOF
-You are reviewing an OpenCode skill for the skills list.
-
-## Skill: $repo
-## Description: $DESC
-## Language: $LANG
-## Stars: $STARS
-
-## SKILL.md Content:
-$SKILL_CONTENT
-
-## Your Task:
-Provide a JSON response with this structure:
-{
-  "name": "skill-name",
-  "score": 1-5,
-  "quality": "excellent|good|average|poor",
-  "security": "safe|concern|unsafe",
-  "should_add": true|false,
-  "category": "category-name",
-  "reason": "why it should/shouldn't be added"
-}
-
-Respond ONLY with valid JSON, no other text.
-EOF
+            # Save skill content to temp file
+            echo "$SKILL_CONTENT" > /tmp/skill-content.md
             
-            # Run OpenCode to review (sends prompt to OpenCode)
-            # Note: This sends to OpenCode API for analysis
-            REVIEW_RESULT=$(cat /tmp/review-prompt.md | opencode --prompt 2>/dev/null || echo '{"should_add":false,"reason":"OpenCode not available"}')
+            # Run OpenCode review
+            REVIEW_RESULT=$(opencode --prompt "Review this OpenCode skill for the skills list. SKILL.md content is in /tmp/skill-content.md. Provide JSON: {\"should_add\": true/false, \"score\": 1-5, \"category\": \"category-name\", \"reason\": \"reason\"}" 2>/dev/null || echo '{"should_add":false}')
             
-            # Check if should be added
             SHOULD_ADD=$(echo "$REVIEW_RESULT" | jq -r '.should_add // false')
             
             if [ "$SHOULD_ADD" = "true" ]; then
               SCORE=$(echo "$REVIEW_RESULT" | jq -r '.score // 3')
-              NAME=$(echo "$REVIEW_RESULT" | jq -r '.name // "'$repo'"')
-              CATEGORY=$(echo "$REVIEW_RESULT" | jq -r '.category // "Comprehensive Collections"')
-              REASON=$(echo "$REVIEW_RESULT" | jq -r '.reason // "Passed review"')
-              
-              # Convert score to stars
-              STARS_DISPLAY=""
-              for i in $(seq 1 $SCORE); do STARS_DISPLAY="${STARS_DISPLAY}⭐"; done
-              
               echo "  ✓ Passed review (score: $SCORE/5)"
-              echo "  Category: $CATEGORY"
-              echo "  Reason: $REASON"
-              
-              # Add to pending list
-              echo "$NAME|$LANG|$DESC|https://github.com/$repo|$STARS|$STARS_DISPLAY|Reviewed by OpenCode|" >> /tmp/skills-to-add.txt
+              echo "$repo|$LANG|$DESC|https://github.com/$repo|$STARS|⭐⭐⭐⭐|Reviewed|" >> /tmp/skills-to-add.txt
             else
               echo "  ✗ Did not pass review"
-              REASON=$(echo "$REVIEW_RESULT" | jq -r '.reason // "Failed check"')
-              echo "    Reason: $REASON"
             fi
             
           done < /tmp/skill-repos.txt
           
           PENDING_COUNT=$(wc -l < /tmp/skills-to-add.txt 2>/dev/null || echo 0)
-          echo "=== Review Complete ==="
           echo "Skills passing review: $PENDING_COUNT"
           echo "passed=$PENDING_COUNT" >> $GITHUB_OUTPUT
 
@@ -137,15 +93,7 @@ EOF
         if: steps.review.outputs.passed > '0'
         run: |
           echo "Adding reviewed skills..."
-          
-          while IFS='|' read -r name lang desc url stars score lang2; do
-            [ -z "$name" ] && continue
-            echo "Adding: $name"
-            
-            # Add to Comprehensive Collections
-            sed -i "/^| awesome-claude-code-toolkit/a| $name | $lang | $desc | $url | $stars | $score | $lang2 |" OPENCODE-SKILLS.md
-            
-          done < /tmp/skills-to-add.txt
+          cat /tmp/skills-to-add.txt >> OPENCODE-SKILLS.md
 
       - name: Commit and sync
         if: steps.review.outputs.passed > '0'
@@ -154,12 +102,10 @@ EOF
           git config --local user.name "github-actions[bot]"
           
           git add OPENCODE-SKILLS.md
-          git commit -m "docs: auto-add OpenCode reviewed skills ($(date +%Y-%m-%d))" || echo "No changes"
+          git commit -m "docs: auto-add reviewed skills ($(date +%Y-%m-%d))" || echo "No changes"
           
-          # Push to private
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/timehub-uk/opencode-skill-list.git HEAD:main
           
-          # Sync to public
           git remote add public https://github.com/timehub-uk/opencode-skills.git 2>/dev/null || true
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/timehub-uk/opencode-skills.git HEAD:main
 
@@ -167,5 +113,4 @@ EOF
         run: |
           echo "## Summary" >> $GITHUB_STEP_SUMMARY
           echo "- Discovered: ${{ steps.discover.outputs.discovered }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Passed OpenCode Review: ${{ steps.review.outputs.passed }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Published: Yes" >> $GITHUB_STEP_SUMMARY
+          echo "- Passed Review: ${{ steps.review.outputs.passed }}" >> $GITHUB_STEP_SUMMARY
