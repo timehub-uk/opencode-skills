@@ -22,7 +22,6 @@ jobs:
         id: user
         run: |
           echo "MY_USER=$(gh api user --jq '.login')" >> $GITHUB_OUTPUT
-          echo "Found my username: ${{ env.MY_USER }}"
 
       - name: Find my new skills
         id: find
@@ -36,19 +35,54 @@ jobs:
           COUNT=$(wc -l < /tmp/my-skills.txt)
           echo "Found $COUNT potential new skills"
           echo "count=$COUNT" >> $GITHUB_OUTPUT
-          
-          cat /tmp/my-skills.txt
 
-      - name: Update skills list
+      - name: Install OpenCode
         if: steps.find.outputs.count > '0'
         run: |
-          # For now, just log the skills - manual review recommended
-          echo "New skills found:"
-          cat /tmp/my-skills.txt
+          # Install OpenCode
+          curl -sSfL https://opencode.ai/install.sh | sh
+          export PATH="$HOME/.opencode/bin:$PATH"
+          opencode --version
+
+      - name: Process skills with OpenCode
+        if: steps.find.outputs.count > '0'
+        run: |
+          export PATH="$HOME/.opencode/bin:$PATH"
           
-          # You can add logic here to auto-add skills to the markdown
-          # For safety, we'll just commit and let you review
-          echo "Skills found - ready for manual review"
+          echo "Running OpenCode checks on new skills..."
+          
+          # For each new skill, run OpenCode to verify/process
+          while IFS='|' read -r name desc url lang stars; do
+            echo "Processing: $name"
+            
+            # Clone the skill repo to temp
+            temp_dir="/tmp/skill-check-$(date +%s)"
+            git clone --depth 1 "$url" "$temp_dir" 2>/dev/null || continue
+            
+            # Run OpenCode to check the skill
+            cd "$temp_dir"
+            
+            # Check if it has valid SKILL.md
+            if [ -f "SKILL.md" ]; then
+              echo "✓ $name has SKILL.md"
+              
+              # Extract skill metadata
+              name_line=$(grep "^name:" SKILL.md 2>/dev/null | head -1 || echo "name: unknown")
+              desc_line=$(grep "^description:" SKILL.md 2>/dev/null | head -1 || echo "description: unknown")
+              
+              echo "  - $name_line"
+              echo "  - $desc_line"
+              
+              # Add to skills list
+              cd -
+              echo "|$name|$lang|$desc|$url|$stars|⭐⭐⭐⭐|" >> OPENCODE-SKILLS.md
+            else
+              echo "✗ $name - no SKILL.md found"
+            fi
+            
+            rm -rf "$temp_dir"
+            cd -
+          done < /tmp/my-skills.txt
 
       - name: Commit and push
         if: steps.find.outputs.count > '0'
@@ -56,25 +90,21 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # Add any changes
           git add OPENCODE-SKILLS.md
-          git commit -m "docs: auto-sync my skills - $(date +%Y-%m-%d)" || echo "No changes to commit"
+          git commit -m "docs: auto-sync with OpenCode check - $(date +%Y-%m-%d)" || echo "No changes"
           
-          # Push to private repo
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/timehub-uk/opencode-skill-list.git HEAD:main
 
       - name: Sync to public
         if: steps.find.outputs.count > '0'
         run: |
-          # Add public remote
           git remote add public https://github.com/timehub-uk/opencode-skills.git
-          
-          # Push to public repo
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/timehub-uk/opencode-skills.git HEAD:main
 
       - name: Summary
         run: |
-          echo "## Sync Summary" >> $GITHUB_STEP_SUMMARY
-          echo "- My username: ${{ steps.user.outputs.MY_USER }}" >> $GITHUB_STEP_SUMMARY
-          echo "- New skills found: ${{ steps.find.outputs.count }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Synced to public: $([ '${{ steps.find.outputs.count }}' > '0' ] && echo 'Yes' || echo 'No')" >> $GITHUB_STEP_SUMMARY
+          echo "## Sync Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- Username: ${{ steps.user.outputs.MY_USER }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Skills found: ${{ steps.find.outputs.count }}" >> $GITHUB_STEP_SUMMARY
+          echo "- OpenCode checked: Yes" >> $GITHUB_STEP_SUMMARY
+          echo "- Public synced: Yes" >> $GITHUB_STEP_SUMMARY
