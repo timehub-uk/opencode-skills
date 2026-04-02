@@ -797,6 +797,92 @@ This document includes security scores (1-5 stars) for skills to help evaluate t
 | ⭐⭐ | Poor | Limited security coverage |
 | ⭐ | Bad | Minimal or no security features |
 
+### Security Concerns by Category
+
+#### MCP Servers - Security Concerns
+
+| Concern | Description | Mitigation |
+|---------|-------------|-------------|
+| **Data Exposure** | MCP servers access codebase data - risk of sensitive data leakage | Use local-only servers, review permissions |
+| **Unverified Code** | Some MCP servers execute code - supply chain risk | Audit code, use trusted sources |
+| **Network Access** | External API calls can expose credentials | Use environment variables, rotate keys |
+| **Memory Persistence** | Memory MCPs store context - potential data at rest risk | Encrypt storage, clear on session end |
+
+**Top MCP Server Pros:**
+- Local processing - data stays on machine
+- Open source - auditable code
+- Active communities - quick bug fixes
+
+**Top MCP Server Cons:**
+- Varying security audit levels
+- Some require cloud APIs
+- Complex permission models
+
+---
+
+#### Comprehensive Collections - Security Concerns
+
+| Concern | Description | Mitigation |
+|---------|-------------|-------------|
+| **Skill Bloat** | Large collections = larger attack surface | Install only needed skills |
+| **Prompt Injection** | Malicious skills could manipulate behavior | Review skills before installing |
+| **Outdated Skills** | Old skills may have vulnerabilities | Regularly update, check dates |
+| **Dependency Chain** | Skills may depend on external code | Pin versions, verify sources |
+
+**Top Collection Pros:**
+- Industry backing (Trail of Bits, etc.)
+- Community scrutiny
+- Regular security audits
+
+**Top Collection Cons:**
+- Some skills are unmaintained
+- Mixed quality
+- Version compatibility issues
+
+---
+
+#### Code Review & PR - Security Concerns
+
+| Concern | Description | Mitigation |
+|---------|-------------|-------------|
+| **False Sense of Security** | Reviews may miss subtle vulnerabilities | Use multiple tools, manual review |
+| **Token Limits** | Large PRs may be truncated | Break into smaller PRs |
+| **API Rate Limits** | GitHub API limits on large repos | Cache results, batch requests |
+| **Credential Exposure** | Review may expose secrets | Use secret scanning first |
+
+**Top Code Review Pros:**
+- Automated consistency
+- Catch common issues
+- Learning opportunity for AI
+
+**Top Code Review Cons:**
+- Can't catch logic bugs
+- Depends on code context
+- May suggest wrong fixes
+
+---
+
+#### Memory & Context - Security Concerns
+
+| Concern | Description | Mitigation |
+|---------|-------------|-------------|
+| **Context Poisoning** | Malicious context injection | Sanitize inputs |
+| **Vector DB Exposure** | Semantic search may expose patterns | Use encrypted embeddings |
+| **Session Persistence** | Data persists across sessions | Configure retention policies |
+| **Embedding Extraction** | Could extract training data | Use differential privacy |
+
+**Top Memory Pros:**
+- Better AI context
+- Learning from history
+- Reduced repetition
+
+**Top Memory Cons:**
+- Security trade-off
+- Storage requirements
+- Privacy concerns
+
+---
+
 ### Categories with Security Scores
 
 - **Security Audit & Review** - Full detailed reviews with briefs
@@ -804,6 +890,107 @@ This document includes security scores (1-5 stars) for skills to help evaluate t
 - **Comprehensive Collections** - Scores added to all entries
 
 > **Note:** Other categories retain base scoring from community engagement (stars). Skills in specialized categories (Mobile, Testing, etc.) should be evaluated based on their specific domain security coverage.
+
+---
+
+#### Productivity & Automation - Security Concerns
+
+| Concern | Description | Mitigation |
+|---------|-------------|-------------|
+| **Automation Accidents** | Automated actions could delete/modify data | Confirm before destructive actions |
+| **Third-Party Integration** | External service credentials at risk | Use read-only tokens when possible |
+| **Tunnel Security** | Network tunnels could expose internal services | Restrict to specific IPs |
+| **Bot Account Compromise** | Telegram/Discord bots could be hijacked | Use bot tokens, not user tokens |
+
+**Top Productivity Pros:**
+- Time savings
+- Consistent workflows
+- Cross-platform integration
+
+**Top Productivity Cons:**
+- Attack surface expansion
+- Credential management complexity
+- Dependency on external services
+
+---
+
+#### Agent Orchestration - Security Concerns
+
+| Concern | Description | Mitigation |
+|---------|-------------|-------------|
+| **Multi-Agent Collusion** | Multiple agents could coordinate maliciously | Limit permissions per agent |
+| **Recursive Actions** | Agents could trigger infinite loops | Set execution limits |
+| **Tool Escalation** | Agent could gain elevated access | Principle of least privilege |
+| **Context Injection** | Malicious prompts could hijack agents | Input validation |
+
+**Top Orchestration Pros:**
+- Parallel processing
+- Specialized agents
+- Scalable workflows
+
+**Top Orchestration Cons:**
+- Complex permission model
+- Harder to audit
+- Resource consumption
+
+---
+
+#### Deployment & DevOps - Security Concerns
+
+| Concern | Description | Mitigation |
+|---------|-------------|-------------|
+| **Infrastructure as Code** | IaC could have misconfigurations | Scan before apply |
+| **Secret Exposure** | Deployment may expose secrets | Use secrets managers |
+| **Container Escapes** | Containerized code could escape | Use rootless containers |
+| **CI/CD Pipeline** | Pipeline vulnerabilities | Audit pipeline code |
+
+**Top Deployment Pros:**
+- Reproducible builds
+- Version controlled
+- Automated testing
+
+**Top Deployment Cons:**
+- Complex configurations
+- Credential management
+- Rollback difficulties
+
+---
+
+#### Claude Code Compatible - Security Concerns
+
+| Concern | Description | Mitigation |
+|---------|-------------|-------------|
+| **Cross-Platform Risks** | Skills may behave differently | Test in target environment |
+| **API Key Theft** | Third-party API keys at risk | Rotate keys regularly |
+| **Prompt Leakage** | Proprietary prompts could be extracted | Use local models |
+| **Model Manipulation** | AI responses could be manipulated | Verify outputs |
+
+**Top Claude Code Compatible Pros:**
+- Cross-agent compatibility
+- Large community
+- Proven patterns
+
+**Top Claude Code Compatible Cons:**
+- Platform-specific issues
+- Version drift
+- Feature parity gaps
+
+---
+
+### Quick Security Checklist
+
+Before installing any skill or MCP server:
+
+- [ ] Review source code
+- [ ] Check last update date
+- [ ] Verify repository stars/forks
+- [ ] Look for security policies
+- [ ] Audit permissions required
+- [ ] Test in isolated environment
+- [ ] Check for credential usage
+- [ ] Review dependencies
+- [ ] Enable logging/monitoring
+- [ ] Set up rollback plan
 
 ---
 
